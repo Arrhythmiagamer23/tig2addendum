@@ -18213,7 +18213,7 @@ var version = "v1.17.1";
               name: "Style Mix",
               colour: "#006eff",
               player: Wt.skins.default,
-              background: "stylemix",
+              background: "styleMix",
               objects: {
                 block: "world4",
                 spike: "world2",
