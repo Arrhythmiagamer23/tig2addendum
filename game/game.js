@@ -30627,7 +30627,7 @@ var version = "v1.17.1";
                   `images/themes/world4/${t}/front-mountain2.png`,
                 ];
               case "stylemix":
-                return ["images/themes/world6/BG.png"];
+                return ["images/themes/stylemix/BG.png"];
               case "skater":
                 return [
                   "images/themes/skater/background/cloud1.png",
@@ -43069,7 +43069,7 @@ var version = "v1.17.1";
                           },
                           sprites: (t) => [
                                 conditional(
-                                  () => e.theme === "infinite",
+                                  () => e.theme === "infinite" || e.theme === "stylemix",
                                   () => [
                                     p(
                                       {
@@ -58617,7 +58617,7 @@ var version = "v1.17.1";
                               },
                             ),
                           ];
-                          case "stylemix":
+                        case "stylemix":
                           return [
                             Go.Single(
                               {
@@ -58648,7 +58648,7 @@ var version = "v1.17.1";
                             dg.Single(
                               {
                                 fileName:
-                                  "images/themes/world6/BG.png",
+                                  "images/themes/stylemix/BG.png",
                                 playerX: 0 * e.cameraX,
                                 playerY: 0,
                                 height: 718,
@@ -60315,7 +60315,7 @@ var version = "v1.17.1";
                         a.y = et.initialPosition.y - M / 2 - e.cameraY - 1;
                       },
                     )
-                  : e.theme == "infinite"
+                  : e.theme == "infinite" || e.theme == "stylemix"
                     ? p(
                         {
                           width: 660 * 2,
@@ -62023,7 +62023,7 @@ var version = "v1.17.1";
                         },
                       ),
                     ]
-                  : t.theme == "infinite"
+                  : t.theme == "infinite" || t.theme == "stylemix"
                     ? [
                         u(
                           {
