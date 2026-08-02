@@ -49160,7 +49160,7 @@ var version = "v1.17.1";
               (e[(e.World4Red = 8)] = "World4Red"),
               (e[(e.World4Boss = 9)] = "World4Boss"),
               (e[(e.World3Red = 10)] = "World3Red"),
-              (e[(e.Skater = 11)] = "Skater"));
+              (e[(e.Skater = 11)] = "Skater"),
               (e[(e.StyleMix = 12)] = "StyleMix"));
           })(rd || (rd = {})),
           (function (e) {
