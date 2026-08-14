@@ -50534,7 +50534,7 @@ var version = "v1.17.3";
           },
           tu = { [kd.Left]: "left", [kd.Right]: "right" },
           au = { [yd.Up]: "up", [yd.Right]: "right" },
-          iu = { [Ed.Switch]: "switch", [Ed.Jump]: "jump" },
+          iu = { [Ed.Beat]: "beat", [Ed.Switch]: "switch", [Ed.Jump]: "jump" },
           nu = { [bd.A]: "a", [bd.B]: "b" },
           su = { [Ad.Coin]: "coin", [Ad.Arrows]: "arrow" },
           ou = { [sd.True]: true, [sd.False]: false };
