@@ -18378,7 +18378,7 @@ var version = "v1.17.3";
                 !willApplyMovement(a.x, a.y, playerX, playerY, fallTypes)
               )
                 return null;
-              const i = "switch" === a.movementTrigger ? switchTrig : 90 * jump,
+              const i = "beat" === a.movementTrigger ? switchTrig : "switch" === a.movementTrigger ? switchTrig : 90 * jump,
                 o = "up" === a.initPosition ? -90 + i : 0 - i;
               return "switchPlatform" ===
                 (null == updated ? void 0 : updated.type)
