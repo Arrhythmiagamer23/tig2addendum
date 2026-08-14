@@ -40688,6 +40688,23 @@ var version = "v1.17.3";
                             });
                           },
                         },
+                        {
+                          name: "Music Beat",
+                          selected: t.trigger == "beat",
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "switchPlatforms",
+                                index: j,
+                                set: (e) =>
+                                  Object.assign(Object.assign({}, e), {
+                                    trigger: "beat",
+                                  }),
+                              });
+                            });
+                          },
+                         },
                       ],
                     },
                   ];
