@@ -40655,6 +40655,23 @@ var version = "v1.17.3";
                       name: "Trigger",
                       options: [
                         {
+                          name: "Music Beat",
+                          selected: "beat" === t.movementTrigger,
+                          onPress: () => {
+                            i.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "switchPlatforms",
+                                index: j,
+                                set: (e) =>
+                                  Object.assign(Object.assign({}, e), {
+                                    movementTrigger: "beat",
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
                           name: "Switch",
                           selected: "switch" === t.movementTrigger,
                           onPress: () => {
@@ -40683,23 +40700,6 @@ var version = "v1.17.3";
                                 set: (e) =>
                                   Object.assign(Object.assign({}, e), {
                                     movementTrigger: "jump",
-                                  }),
-                              });
-                            });
-                          },
-                        },
-                        {
-                          name: "Music Beat",
-                          selected: "beat" === t.movementTrigger,
-                          onPress: () => {
-                            i.map((j) => {
-                              e({
-                                type: "setProperty",
-                                array: "switchPlatforms",
-                                index: j,
-                                set: (e) =>
-                                  Object.assign(Object.assign({}, e), {
-                                    movementTrigger: "beat",
                                   }),
                               });
                             });
