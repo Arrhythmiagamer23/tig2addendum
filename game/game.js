@@ -40690,7 +40690,7 @@ var version = "v1.17.3";
                         },
                         {
                           name: "Music Beat",
-                          selected: t.trigger == "beat",
+                          selected: "beat" === t.movementTrigger,
                           onPress: () => {
                             a.map((j) => {
                               e({
