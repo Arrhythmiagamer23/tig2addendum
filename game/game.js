@@ -40699,12 +40699,12 @@ var version = "v1.17.3";
                                 index: j,
                                 set: (e) =>
                                   Object.assign(Object.assign({}, e), {
-                                    trigger: "beat",
+                                    movementTrigger: "beat",
                                   }),
                               });
                             });
                           },
-                         },
+                        },
                       ],
                     },
                   ];
