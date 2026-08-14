@@ -40692,7 +40692,7 @@ var version = "v1.17.3";
                           name: "Music Beat",
                           selected: "beat" === t.movementTrigger,
                           onPress: () => {
-                            a.map((j) => {
+                            i.map((j) => {
                               e({
                                 type: "setProperty",
                                 array: "switchPlatforms",
