@@ -49266,7 +49266,7 @@ var version = "v1.17.3";
             ((e[(e.Up = 0)] = "Up"), (e[(e.Right = 1)] = "Right"));
           })(yd || (yd = {})),
           (function (e) {
-            ((e[(e.Switch = 0)] = "Switch"), (e[(e.Jump = 1)] = "Jump"));
+            ((e[(e.Switch = 0)] = "Switch"), (e[(e.Jump = 1)] = "Jump"), (e[(e.Beat = 2)] = "Beat"));
           })(Ed || (Ed = {})),
           (function (e) {
             ((e[(e.A = 0)] = "A"), (e[(e.B = 1)] = "B"));
