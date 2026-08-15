@@ -18379,7 +18379,7 @@ var version = "v1.17.3";
                 !willApplyMovement(a.x, a.y, playerX, playerY, fallTypes)
               )
                 return null;
-              const i = "beat" === a.movementTrigger ? switchTrig : "switch" === a.movementTrigger ? switchTrig : 90 * jump,
+              const i = "switch" === a.movementTrigger ? switchTrig : "beat" === a.movementTrigger ? switchTrig : 90 * jump,
                 o = "up" === a.initPosition ? -90 + i : 0 - i;
               return "switchPlatform" ===
                 (null == updated ? void 0 : updated.type)
@@ -49267,9 +49267,9 @@ var version = "v1.17.3";
             ((e[(e.Up = 0)] = "Up"), (e[(e.Right = 1)] = "Right"));
           })(yd || (yd = {})),
           (function (e) {
-            ((e[(e.Switch = 0)] = "Switch"),
+            ((e[(e.Beat = 0)] = "Beat"),
               (e[(e.Jump = 1)] = "Jump"),
-              (e[(e.Beat = 2)] = "Beat"));
+              (e[(e.Switch = 2)] = "Switch"));
           })(Ed || (Ed = {})),
           (function (e) {
             ((e[(e.A = 0)] = "A"), (e[(e.B = 1)] = "B"));
@@ -50077,6 +50077,7 @@ var version = "v1.17.3";
                         initPosition: au[a],
                         movementTrigger: iu[i],
                         direction: Hd[n] || 0,
+                        multiplier: i,
                       }),
                     ),
                     collectibles: y.map(([e, t, a]) =>
@@ -50537,7 +50538,7 @@ var version = "v1.17.3";
           },
           tu = { [kd.Left]: "left", [kd.Right]: "right" },
           au = { [yd.Up]: "up", [yd.Right]: "right" },
-          iu = { [Ed.Beat]: "beat", [Ed.Switch]: "switch", [Ed.Jump]: "jump" },
+          iu = { [Ed.Beat]: "beat", [Ed.Switch]: "switch", [Ed.Jump]: "jump", [Ed.Switch]: "switch" },
           nu = { [bd.A]: "a", [bd.B]: "b" },
           su = { [Ad.Coin]: "coin", [Ad.Arrows]: "arrow" },
           ou = { [sd.True]: true, [sd.False]: false };
