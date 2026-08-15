@@ -47680,6 +47680,18 @@ var version = "v1.17.3";
               pathToLevel: [],
               maxFrames: 5314,
               difficulty: 4,
+            },
+            {
+              levelName: "Jackpot",
+              levelFileName: "jackpot",
+              author: "KDSGeoDash",
+              song: hl.songs.color,
+              unlockedByIndex: null,
+              x: 0,
+              y: 0,
+              pathToLevel: [],
+              maxFrames: 6879,
+              difficulty: 7,
             }
           ],
           jl = [Dl, Bl, Fl, Yl, world5levels],
