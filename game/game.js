@@ -16337,7 +16337,8 @@ var version = "v1.17.3";
                   null !== (o = null == e ? void 0 : e.movementTrigger) &&
                   void 0 !== o
                     ? o
-                    : "beat",
+                    : "switch",
+                multiplier: e ? e.multiplier || 1 : 1,
                 rotation: "up" === r ? -90 + e.direction : 0 + e.direction,
                 direction: e?.direction || 0,
               };
