@@ -1,5 +1,5 @@
 // stolen from Snap! ( https://github.com/jmoenig/Snap/blob/master/sw.js )
-var version = "1.1.2",
+var version = "1.1.3",
   cacheName = `tig2plus-pwa-${version}`,
   basicFiles = [
     "./index.html",
@@ -572,6 +572,7 @@ var version = "1.1.2",
     "meganeko-breathe.mp3",
     "meganeko-daydreamer.mp3",
     "miami-nights-1984-accelerated.mp3",
+    "colbreakz-memories.mp3",
 
     "nitro-fun-dragonfly.mp3",
     "panda-eyes-think-different.mp3",
