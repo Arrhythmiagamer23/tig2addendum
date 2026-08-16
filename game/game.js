@@ -49466,6 +49466,7 @@ var version = "v1.18.0";
             e[(e.SolarWind = 56)] = "SolarWind";
             e[(e.GlitchedOut = 57)] = "GlitchedOut";
             e[(e.LastTile = 58)] = "LastTile";
+            e[(e.Memories = 59)] = "Memories";
             // you know what? I'm not gonna put songs here. This variable (Rd) isn't even used anywhere.
           })(Rd || (Rd = {})),
           (function (e) {
@@ -49596,6 +49597,7 @@ var version = "v1.18.0";
             e[(e.MilkyWays = 67)] = "MilkyWays";
             e[(e.ParadiseOnE = 68)] = "ParadiseOnE";
             e[(e.Rattlesnake = 69)] = "Rattlesnake";
+            e[(e.Memories = 70)] = "Memories";
           })(Nd || (Nd = {})),
           (function (e) {
             ((e[(e.World1 = 0)] = "World1"),
@@ -50566,6 +50568,7 @@ var version = "v1.18.0";
             [Nd.MilkyWays]: hl.songs.milkyWays,
             [Nd.ParadiseOnE]: hl.songs.paradiseOnE,
             [Nd.Rattlesnake]: hl.songs.rattlesnake,
+            [Nd.Memories]: hl.songs.memories,
           },
           Hd = {
             [ld.Rot0]: 0,
