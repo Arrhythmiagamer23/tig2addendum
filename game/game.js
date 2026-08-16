@@ -17928,42 +17928,42 @@ var version = "v1.17.3";
             colon: {
               name: "Colon",
               fileName: "colon",
-              size: 31,
+              size: 33,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#5a5a5a", bottomColour: "#5a5a5a" })
             },
             geogd: {
               name: "GeoGD",
               fileName: "geogd",
-              size: 31,
+              size: 35,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#ff7d7d", bottomColour: "#ffa040" })
             },
             juniper: {
               name: "Juniper",
               fileName: "juniper",
-              size: 31,
+              size: 33,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#7dffaf", bottomColour: "#7dffaf" })
             },
             viprin: {
               name: "ViPrIn",
               fileName: "viprin",
-              size: 31,
+              size: 33,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#ffff00", bottomColour: "#b900ff" })
             },
             nexus: {
               name: "Nexus",
               fileName: "nexus",
-              size: 31,
+              size: 33,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#ff0000", bottomColour: "#ffffff" })
             },
             mulpan: {
               name: "Mulpan",
               fileName: "mulpan",
-              size: 31,
+              size: 34,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#00ff7d", bottomColour: "#00ff7d" })
             },
@@ -17977,14 +17977,14 @@ var version = "v1.17.3";
             stivenelvro: {
               name: "Stivenelvro",
               fileName: "stivenelvro",
-              size: 31,
+              size: 33,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#ffffff", bottomColour: "#00ffff" })
             },
             masterthecube: {
               name: "MasterTheCube5",
               fileName: "masterthecube5",
-              size: 31,
+              size: 33,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#7d00ff", bottomColour: "#ff7d00" })
             },
