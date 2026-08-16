@@ -3,7 +3,7 @@ var game;
 var bgOnly = false,
   showcaseOnly = false;
 
-var version = "v1.17.3";
+var version = "v1.18.0";
 (() => {
   var e = {
       8465: (e, t, a) => {
@@ -45927,6 +45927,12 @@ var version = "v1.17.3";
                 author: "Creo",
                 bpm: 120,
                 fileName: "audio/tracks/creo-carnivores.mp3",
+              },
+              memories: {
+                name: "Memories",
+                author: "Colbreakz",
+                bpm: 128,
+                fileName: "audio/tracks/colbreakz-memories.mp3",
               },
               
             },
