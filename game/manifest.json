@@ -1,7 +1,7 @@
 {
-  "name": "The Impossible Game 2+",
-  "description": "A mod of The Impossible Game 2",
-  "short_name": "TIG2+",
+  "name": "The Impossible Game 2 Addendum",
+  "description": "A mod of The Impossible Game 2+",
+  "short_name": "TIG2 Addendum",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,9 +11,9 @@
   ],
   "developer": {
     "name": "d016 (e016)",
-    "url": "https://www.github.com/e016"
+    "url": "https://www.github.com/ArrhythmiaGamer23"
   },
-  "version": "v1.4.3",
+  "version": "v1.5.0",
   "lang": "en-US",
   "display": "standalone",
   "background_color": "white",
