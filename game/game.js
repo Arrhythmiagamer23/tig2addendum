@@ -18442,7 +18442,7 @@ var version = "v1.17.3";
                 !willApplyMovement(a.x, a.y, playerX, playerY, fallTypes)
               )
                 return null;
-              const i = "beat" === a.movementTrigger ? frame : "switch" === a.movementTrigger ? switchTrig : 90 * jump,
+              const i = "beat" === a.movementTrigger ? _a(frame, maxBeat) : "switch" === a.movementTrigger ? switchTrig : 90 * jump,
                 o = "up" === a.initPosition ? -90 + i : 0 - i;
               return "switchPlatform" ===
                 (null == updated ? void 0 : updated.type)
@@ -73882,7 +73882,7 @@ var version = "v1.17.3";
                   height: 40,
                   text: localize("GITHUB REPO"),
                   onPress: () => {
-                    zu.openLink("https://github.com/e016/tig2plus");
+                    zu.openLink("https://github.com/Arrhythmiagamer23/tig2addendum");
                   },
                   y: s - 150,
                 }),
