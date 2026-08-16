@@ -17821,6 +17821,72 @@ var version = "v1.18.1";
               size: 31,
               trail: ct(),
             },
+            yellow: {
+              name: "Default Yellow",
+              fileName: "yellow",
+              size: 31,
+              trail: ct({ topColour: "#fdef64", bottomColour: "#fdef64" })
+            },
+            orange: {
+              name: "Default Orange",
+              fileName: "orange",
+              size: 31,
+              trail: ct({ topColour: "#d38000", bottomColour: "#d38000" })
+            },
+            redorange: {
+              name: "Default Red and Orange",
+              fileName: "redorange",
+              size: 31,
+              trail: ct({ topColour: "#ce4e1d", bottomColour: "#ce4e1d" })
+            },
+            turquoise: {
+              name: "Default Turquoise",
+              fileName: "turquoise",
+              size: 31,
+              trail: ct({ topColour: "#089d72", bottomColour: "#089d72" })
+            },
+            darkcyan: {
+              name: "Default Dark Cyan",
+              fileName: "darkcyan",
+              size: 31,
+              trail: ct({ topColour: "#035c74", bottomColour: "#035c74" })
+            },
+            blue: {
+              name: "Default Blue",
+              fileName: "blue",
+              size: 31,
+              trail: ct({ topColour: "#035c74", bottomColour: "#035c74" })
+            },
+            purple: {
+              name: "Default Purple",
+              fileName: "purple",
+              size: 31,
+              trail: ct({ topColour: "#830ca4", bottomColour: "#830ca4" })
+            },
+            lightpurple: {
+              name: "Default Light Purple",
+              fileName: "lightpurple",
+              size: 31,
+              trail: ct({ topColour: "#af4af3", bottomColour: "#af4af3" })
+            },
+            magenta: {
+              name: "Default Magenta",
+              fileName: "magenta",
+              size: 31,
+              trail: ct({ topColour: "#ac089b", bottomColour: "#ac089b" })
+            },
+            white: {
+              name: "Default White",
+              fileName: "white",
+              size: 31,
+              trail: ct({ topColour: "#ffffff", bottomColour: "#ffffff" })
+            },
+            black: {
+              name: "Default Black",
+              fileName: "black",
+              size: 31,
+              trail: ct({ topColour: "#151515", bottomColour: "#151515" })
+            },
             pixel: ut,
             glow: ht,
             world4: pt,
