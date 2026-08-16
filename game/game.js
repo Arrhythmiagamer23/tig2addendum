@@ -18005,7 +18005,7 @@ var version = "v1.18.1";
             angrybird: {
               name: "Angry Bird",
               fileName: "angrybird",
-              size: 40,
+              size: 46,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#ff0000", bottomColour: "#ffffff" })
             },
