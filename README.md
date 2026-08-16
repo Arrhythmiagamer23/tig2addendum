@@ -1,6 +1,6 @@
 # The Impossible Game 2 Addendum
 
-A mod of [The Impossible Game 2](https://en.wikipedia.org/wiki/The_Impossible_Game_2) with more features.
+A mod of [The Impossible Game 2+]([https://e016.github.io/tig2plus]) with even more features.
 
 Before contributing; read the [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) file.
 
@@ -16,6 +16,8 @@ Before contributing; read the [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) file.
 * Right-Facing Enemies
 * Speed-retaining Flags
 * "Classic" theme, for those who liked the original _The Impossible Game_
+* "Style Mix" theme, for those who never had it in _TIG2+_
+* Music Beat Option for Switch Platforms (W.I.P.)
 * Size Button
 * TIG Infinite Orbs
 * Boss Elements (Sky Fracture gameplay, minions, fireballs, cannonballs, etc...)
