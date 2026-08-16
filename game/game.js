@@ -17360,6 +17360,7 @@ var version = "v1.18.1";
           He = "#DB4D01",
           Xe = "#7b7b7b",
           ze = "#c1c1c1",
+          vez = "#000000",
           We = ({
             x: e,
             y: t,
@@ -62365,9 +62366,11 @@ var version = "v1.18.1";
                         c(
                           {
                             text: localize("Attempt"),
-                            color: getInfiniteThemeColors(t.background),
-                            font: { family: "Poppins", size: 16 },
+                            color: "white",
+                            font: { family: "Pusab", size: 16 },
                             y: e.size.fullHeight / 2 - 47,
+                            strokeColor: vez,
+                            strokeThickness: 2,
                           },
                           (a) => {
                             a.y = e.size.fullHeight / 2 - 47;
@@ -62376,9 +62379,11 @@ var version = "v1.18.1";
                         ),
                         c(
                           {
-                            color: getInfiniteThemeColors(t.background),
+                            color: "white",
                             font: { family: "Pusab", size: 16 },
                             y: e.size.fullHeight / 2 - 71,
+                            strokeColor: vez,
+                            strokeThickness: 2,
                           },
                           (a) => {
                             ((a.text = String(t.attempt)),
