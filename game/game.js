@@ -18005,7 +18005,7 @@ var version = "v1.18.1";
             angrybird: {
               name: "Angry Bird",
               fileName: "angrybird",
-              size: 36,
+              size: 34,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#ff0000", bottomColour: "#ffffff" })
             },
@@ -62200,7 +62200,7 @@ var version = "v1.18.1";
                         },
                       ),
                     ]
-                  : t.theme == "infinite" || t.theme == "stylemix"
+                  : t.theme == "infinite"
                     ? [
                         u(
                           {
@@ -62252,6 +62252,66 @@ var version = "v1.18.1";
                           {
                             color: getInfiniteThemeColors(t.background),
                             font: { family: "Poppins", size: 16 },
+                            y: e.size.fullHeight / 2 - 71,
+                          },
+                          (a) => {
+                            ((a.text = String(t.attempt)),
+                              (a.y = e.size.fullHeight / 2 - 71));
+                          },
+                        ),
+                      ]
+                    : t.theme == "stylemix"
+                    ? [
+                        u(
+                          {
+                            y: e.size.fullHeight / 2 - 55,
+                            color: getInfiniteThemeColors(t.background),
+                            radius: 57,
+                            opacity: 0.5
+                          },
+                          (a) => {
+                            a.y = e.size.fullHeight / 2 - 55;
+                            a.color = getInfiniteThemeColors(t.background);
+                          },
+                        ),
+                        u(
+                          {
+                            y: e.size.fullHeight / 2 - 55,
+                            color: getInfiniteThemeColors(t.background),
+                            radius: 50,
+                          },
+                          (a) => {
+                            a.y = e.size.fullHeight / 2 - 55;
+                            a.color = getInfiniteThemeColors(t.background);
+                          },
+                        ),
+                        u(
+                          {
+                            y: e.size.fullHeight / 2 - 55,
+                            color: infiniteBgTable(0, t.background),
+                            radius: 40,
+                          },
+                          (a) => {
+                            a.y = e.size.fullHeight / 2 - 55;
+                            a.color = infiniteBgTable(0, t.background);
+                          },
+                        ),
+                        c(
+                          {
+                            text: localize("Attempt"),
+                            color: getInfiniteThemeColors(t.background),
+                            font: { family: "Poppins", size: 16 },
+                            y: e.size.fullHeight / 2 - 47,
+                          },
+                          (a) => {
+                            a.y = e.size.fullHeight / 2 - 47;
+                            a.color = getInfiniteThemeColors(t.background);
+                          },
+                        ),
+                        c(
+                          {
+                            color: getInfiniteThemeColors(t.background),
+                            font: { family: "Pusab", size: 16 },
                             y: e.size.fullHeight / 2 - 71,
                           },
                           (a) => {
