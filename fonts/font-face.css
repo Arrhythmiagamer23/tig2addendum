@@ -39,3 +39,10 @@
       font-weight: 500;
       font-style: italic;
     }
+
+    @font-face {
+      font-family: "Pusab";
+      src: url("./PUSAB___.otf");
+      font-weight: 500;
+      font-style: normal;
+    }
