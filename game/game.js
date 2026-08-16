@@ -3,7 +3,7 @@ var game;
 var bgOnly = false,
   showcaseOnly = false;
 
-var version = "v1.18.0";
+var version = "v1.18.1";
 (() => {
   var e = {
       8465: (e, t, a) => {
@@ -17987,6 +17987,20 @@ var version = "v1.18.0";
               size: 33,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#7d00ff", bottomColour: "#ff7d00" })
+            },
+            nocz: {
+              name: "NoczGD",
+              fileName: "noczgd",
+              size: 33,
+              author: "KDSGeoDash",
+              trail: ct({ topColour: "#ff0000", bottomColour: "#ffffff" })
+            },
+            spaceguy: {
+              name: "SpaceGuy",
+              fileName: "spaceguy",
+              size: 33,
+              author: "KDSGeoDash",
+              trail: ct({ topColour: "#b900ff", bottomColour: "#ffb900" })
             },
             blank: {
               name: "Blank",
