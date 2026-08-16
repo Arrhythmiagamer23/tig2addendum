@@ -17935,7 +17935,7 @@ var version = "v1.17.3";
             geogd: {
               name: "GeoGD",
               fileName: "geogd",
-              size: 35,
+              size: 39,
               author: "KDSGeoDash",
               trail: ct({ topColour: "#ff7d7d", bottomColour: "#ffa040" })
             },
