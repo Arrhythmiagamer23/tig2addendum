@@ -37,7 +37,7 @@ var version = "1.1.3",
     "fonts/Poppins-Regular.ttf",
     "fonts/Poppins-SemiBold.ttf",
     "fonts/Poppins-SemiBoldItalic.ttf",
-    "fonts/Pusab.otf",
+    "fonts/Pusab.ttf",
 
     // favicon
     "./favicon.ico",
