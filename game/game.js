@@ -3,7 +3,7 @@ var game;
 var bgOnly = false,
   showcaseOnly = false;
 
-var version = "v1.18.1";
+var version = "v1.18.2";
 (() => {
   var e = {
       8465: (e, t, a) => {
@@ -16359,17 +16359,18 @@ var version = "v1.18.1";
                 width:
                   null !== (i = null == e ? void 0 : e.width) && void 0 !== i
                     ? i
-                    : 30,
+                    : (e && e.kind) === "fan" ? 90 : 30,
                 height:
                   null !== (n = null == e ? void 0 : e.height) && void 0 !== n
                     ? n
-                    : 15,
+                    : (e && e.kind) === "fan" ? 120 : 15,
                 direction:
                   null !== (o = null == e ? void 0 : e.direction) &&
                   void 0 !== o
                     ? o
                     : 1,
-                snapSize: { offsetY: 7.5 },
+                kind: (e && e.kind) || "spring",
+                snapSize: { offsetY: (e && e.kind) === "fan" ? 0 : 7.5 },
               };
             },
             newCollectible: (e) => {
@@ -16543,7 +16544,7 @@ var version = "v1.18.1";
             new F.Vector(2),
             new F.Vector(3),
           ]),
-          te = (e, t, a, i) => (
+          getRectPoly = (e, t, a, i) => (
             (ee.pos.x = e - a / 2),
             (ee.pos.y = t - i / 2),
             (ee.points[0].x = 0),
@@ -16660,7 +16661,7 @@ var version = "v1.18.1";
               );
           }
         }
-        function ce(e, t) {
+        function getSpikePoly(e, t) {
           switch (e.rotation || 0) {
             case 0:
               return re(
@@ -16752,7 +16753,7 @@ var version = "v1.18.1";
             pooledPlayerPoly1: ie,
             pooledPlayerPoly2: ne,
             pooledPlayerPoly3: se,
-            getRectPoly: te,
+            getRectPoly: getRectPoly,
             getDiamondPoly: (e, t, a, i) => (
               (ae.pos.x = e),
               (ae.pos.y = t),
@@ -16771,7 +16772,7 @@ var version = "v1.18.1";
               switch (obj.type) {
                 case "spike":
                   return switchBlockSpike
-                    ? te(
+                    ? getRectPoly(
                         obj.x,
                         obj.y,
                         obj.width - 2 * inset,
@@ -16779,7 +16780,7 @@ var version = "v1.18.1";
                       )
                     : obj.isLaser
                       ? laserHitbox(obj, inset)
-                      : ce(obj, inset);
+                      : getSpikePoly(obj, inset);
                 case "powerup":
                   return re(
                     obj.x,
@@ -16794,21 +16795,21 @@ var version = "v1.18.1";
                 case "collectible": {
                   const t = 20,
                     a = 20;
-                  return te(obj.x, obj.y, t, a);
+                  return getRectPoly(obj.x, obj.y, t, a);
                 }
                 case "block":
                   return switchBlockSpike
                     ? obj.isLaser
                       ? laserHitbox(obj, inset)
-                      : ce(obj, inset)
-                    : te(
+                      : getSpikePoly(obj, inset)
+                    : getRectPoly(
                         obj.x,
                         obj.y,
                         obj.width - 2 * inset,
                         obj.height - 2 * inset,
                       );
                 case "platform":
-                  return te(
+                  return getRectPoly(
                     obj.x,
                     obj.y,
                     obj.width - 2 * inset,
@@ -16816,8 +16817,8 @@ var version = "v1.18.1";
                   );
                 case "portal":
                   return "up" === obj.direction || "down" === obj.direction
-                    ? te(obj.x, obj.y, obj.height, obj.width)
-                    : te(obj.x, obj.y, obj.width, obj.height);
+                    ? getRectPoly(obj.x, obj.y, obj.height, obj.width)
+                    : getRectPoly(obj.x, obj.y, obj.width, obj.height);
                 case "enemy":
                   return "walkerHelmet" === obj.kind
                     ? ((r = obj.width / 2),
@@ -16844,18 +16845,18 @@ var version = "v1.18.1";
                       le)
                     : "minion" === obj.kind
                       ? // width: 15, height: 20
-                        te(obj.x, obj.y, 15, 20 - 2 * inset)
+                        getRectPoly(obj.x, obj.y, 15, 20 - 2 * inset)
                       : "fireball" === obj.kind
                         ? Z(obj.x, obj.y, 5)
                         : "shooter" !== obj.kind
-                          ? te(obj.x, obj.y, obj.width, obj.height - 2 * inset)
-                          : te(obj.x, obj.y, obj.width, obj.height);
+                          ? getRectPoly(obj.x, obj.y, obj.width, obj.height - 2 * inset)
+                          : getRectPoly(obj.x, obj.y, obj.width, obj.height);
                 case "directionChange":
                 case "speedChange":
                 case "flag":
                 case "switchButton":
                 case "spring":
-                  return te(obj.x, obj.y, obj.width, obj.height);
+                  return getRectPoly(obj.x, obj.y, obj.width, obj.height);
                 case "switchPlatform": {
                   const t = obj.height / 2,
                     i = -t + inset,
@@ -17126,7 +17127,7 @@ var version = "v1.18.1";
                 ? { type: "crashed" }
                 : null;
             },
-            hitObject: function (e, t, a, i, n, s, o) {
+            hitObject: function (e, t, a, i, n, s, switchBlockSpikes) {
               const r = de.getPlayerPoly(
                 e,
                 t,
@@ -17139,7 +17140,7 @@ var version = "v1.18.1";
               return (t) => {
                 if (t.x > e + t.width + ue || t.x < e - t.width - ue * 2)
                   return false;
-                const a = de.getObjectPolygon(t, o);
+                const a = de.getObjectPolygon(t, switchBlockSpikes);
                 return de.polygonHitSomething(r, a);
               };
             },
@@ -18842,6 +18843,7 @@ var version = "v1.18.1";
               inViewLayoutState,
               fullLayoutStateIndexes, // optional?
               fallTypes,
+              freeze,
             ) {
               // const floorStates = inViewLayoutState.blocks.filter(e => e.isGround),
               const p = layoutFirstIndexes;
@@ -20107,7 +20109,22 @@ var version = "v1.18.1";
                 });
               }
             },
-            render: ({ props: e }) => [
+            render: ({ props: e, getContext }) => [
+              ifConditional(
+                () => getContext(Se).settings.freezeOnDeath,
+                () => [
+                  p(
+                    {
+                      width: 30 * e.playerScaleX,
+                      height: 30 * e.playerScaleY,
+                      rotation: e.playerRot,
+                      color: e.trail.topColour,
+                      opacity: 0.5,
+                      show: e.playerScaleX
+                    }
+                  )
+                ]
+              ),
               conditional(
                 () => "pixel" === e.trail.form,
                 () => [
@@ -31024,6 +31041,7 @@ var version = "v1.18.1";
               `images/themes/${e.objects.spike}/spike.png`,
               `images/themes/${e.objects.switch}/switch-platform.png`,
               `images/themes/${e.objects.switch}/switch-button.png`,
+              "images/themes/classic/fan.png",
               "images/themes/world3/block-white.png",
               "images/themes/world3/block-white-light.png",
               "images/themes/world3/spike-white.png",
@@ -31220,6 +31238,7 @@ var version = "v1.18.1";
               "images/editor/editorOnly/direction-change.png",
               "images/editor/editorOnly/double-jump.png",
               "images/editor/editorOnly/spring.png",
+              "images/editor/editorOnly/fan.png",
               "images/editor/editorOnly/speed-change.png",
               "images/themes/blank/block.png",
               "images/editor/editorOnly/block-switch-button.png",
@@ -32121,7 +32140,7 @@ var version = "v1.18.1";
                               update: (t, a, i) => {
                                 ((t.x = e.saws[i].x),
                                   (t.y = a),
-                                  (t.radius = e.saws[i].width / 2),
+                                  (t.radius = e.saws[i].width / 2 - 0.5),
                                   (t.opacity =
                                     e.saws[i].shape == "bar" ? 0 : 0.5));
                               },
@@ -36769,6 +36788,61 @@ var version = "v1.18.1";
                     ),
                   ],
           }),
+          fanParticles = makeSprite({
+            init: ({ props, device }) => ({ particles: [], frame: 0 }),
+            loop({ state, props, device }) {
+              if (props.paused) {
+                return;
+              }
+              state.frame++;
+              state.particles.forEach(
+                (path, index) => {
+                  if (path[1][1] < 60) {
+                    if (path[1][1] > -30) {
+                      path[0][1] += 5
+                    }
+                    path[1][1] += 5
+                  } else {
+                    path[0][1] += 5;
+                  }
+                  path[0][1] = Math.min(path[0][1], path[1][1]);
+                  if (path[0][1] == path[1][1]) {
+                    state.particles[index] = null;
+                  };
+                }
+              );
+              console.warn(state.particles, state.particles.filter((e) => e !== null))
+              state.particles = state.particles.filter((e) => e !== null);
+              if (state.particles.length < 10 && state.frame % 2 === 0) {
+                let x = device.random() * 90 - 45;
+                state.particles.push([
+                  [
+                    x, -45
+                  ], 
+                  [
+                    x, -45
+                  ]
+                ]);
+              };
+            },
+            render({ state, props }) {
+              return [
+                f({
+                  props: () => ({
+                    thickness: 4,
+                    color: 'white',
+                    opacity: 0.2,
+                    lineCap: "round",
+                    path: [],
+                  }),
+                  update: (a, n, index) => {
+                    a.path = n || [];
+                  },
+                  array: () => state.particles || [],
+                })
+              ]
+            }
+          }),
           $o = makeSprite({
             init: () => ({ hitCount: 0 }),
             loop({ props: e, state: t }) {
@@ -36799,19 +36873,36 @@ var version = "v1.18.1";
               const { animationAssets: i, animationRenderer: n } =
                 e.spineContext || a(Ws);
               return [
-                onChange(
-                  () => t.hitCount,
+                conditional(
+                  () => e.spring.kind === "fan",
                   () => [
-                    Hs(
+                    (e.isEditor ? p({
+                      width: e.spring.width,
+                      height: e.spring.height,
+                      color: "white",
+                      opacity: 0.5,
+                    }, (a) => {
+                      a.x = e.spring.x;
+                      a.y = e.spring.y;
+                    }) : null),
+                    fanParticles.Single({
+                      paused: e.paused,
+                      df: e.df,
+                      scaleY: e.spring.direction
+                    }, (t) => {
+                      t.paused = e.paused;
+                      t.df = e.df;
+                      t.scaleY = e.spring.direction;
+                      t.x = e.spring.x;
+                      t.y = e.spring.y;
+                    }),
+                    loopingSpriteSheet.Single(
                       {
-                        id: "SpringSpine",
-                        animationAssets: i,
-                        animationRenderer: n,
-                        animationName: "animation",
-                        fileNames: Qs.spineFiles.spring,
-                        loop: false,
-                        df: 0 === t.hitCount ? 0 : e.df || 1,
-                        paused: e.paused || false,
+                        fileName: "images/themes/classic/fan.png",
+                        width: 75,
+                        height: 20,
+                        columns: 6,
+                        rows: 1,
                         x: e.spring.x,
                         y: getBlockFallY(
                           e.spring.x,
@@ -36819,30 +36910,73 @@ var version = "v1.18.1";
                           e.inGame && e.inGame.playerX,
                           e.inGame && e.inGame.fallTypes,
                           e.inGame && e.inGame.playerDir,
-                        ),
-                        scale: { x: 1, y: e.spring.direction || 1 },
-                        height: e.spring.height,
+                        ) + -45 * e.spring.direction,
+                        scaleY: e.spring.direction,
+                        frame: 0,
+                        frameRate: 2,
                       },
-                      (a) => {
-                        ((a.df = 0 === t.hitCount ? 0 : e.df || 1),
-                          (a.paused = e.paused || false),
-                          (a.x = e.spring.x),
-                          (a.y =
-                            getBlockFallY(
+                      (t) => {
+                        ((t.x = e.spring.x),
+                          (t.y = getBlockFallY(
+                            e.spring.x,
+                            e.spring.y,
+                            e.inGame && e.inGame.playerX,
+                            e.inGame && e.inGame.fallTypes,
+                            e.inGame && e.inGame.playerDir,
+                          ) + -45 * e.spring.direction),
+                          (t.scaleY = e.spring.direction),
+                          (t.frame = e.frame)
+                        );
+                      },
+                    ),
+                  ],
+                  () => [
+                    onChange(
+                      () => t.hitCount,
+                      () => [
+                        Hs(
+                          {
+                            id: "SpringSpine",
+                            animationAssets: i,
+                            animationRenderer: n,
+                            animationName: "animation",
+                            fileNames: Qs.spineFiles.spring,
+                            loop: false,
+                            df: 0 === t.hitCount ? 0 : e.df || 1,
+                            paused: e.paused || false,
+                            x: e.spring.x,
+                            y: getBlockFallY(
                               e.spring.x,
                               e.spring.y,
                               e.inGame && e.inGame.playerX,
                               e.inGame && e.inGame.fallTypes,
                               e.inGame && e.inGame.playerDir,
-                            ) + (e.spring.direction < 0 ? 15 : 0)));
-                        a.scale = {
-                          x: e.scale || 1,
-                          y: (e.spring.direction || 1) * (e.scale || 1),
-                        };
-                      },
-                    ),
+                            ),
+                            scale: { x: 1, y: e.spring.direction || 1 },
+                            height: e.spring.height,
+                          },
+                          (a) => {
+                            ((a.df = 0 === t.hitCount ? 0 : e.df || 1),
+                              (a.paused = e.paused || false),
+                              (a.x = e.spring.x),
+                              (a.y =
+                                getBlockFallY(
+                                  e.spring.x,
+                                  e.spring.y,
+                                  e.inGame && e.inGame.playerX,
+                                  e.inGame && e.inGame.fallTypes,
+                                  e.inGame && e.inGame.playerDir,
+                                ) + (e.spring.direction < 0 ? 15 : 0)));
+                            a.scale = {
+                              x: e.scale || 1,
+                              y: (e.spring.direction || 1) * (e.scale || 1),
+                            };
+                          },
+                        ),
+                      ],
+                    )
                   ],
-                ),
+                )
               ];
             },
           }),
@@ -39070,8 +39204,61 @@ var version = "v1.18.1";
                   ];
                 })(e, t, i);
               case "spring":
+                const springReplace = (e, t, onew) => {
+                    const n = Ca.removeObject(t, "springs", i),
+                    newObject = Object.assign(Object.assign({}, e), onew);
+                    return (
+                      Da.moveObjectUntilCanPlace(
+                        n,
+                        Object.assign(newObject, V(newObject, onew.snapSize)),
+                      ) || null
+                    );
+                  };
                 return (function (e, t, a) {
                   return [
+                    {
+                      name: "Kind",
+                      options: [
+                        {
+                          name: "Spring",
+                          selected: t.kind === "spring",
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "springs",
+                                index: j,
+                                set: (e, t) => springReplace(e, t, {
+                                    kind: "spring",
+                                    width: 30,
+                                    height: 15,
+                                    snapSize: { offsetY: 7.5 }
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Fan",
+                          selected: t.kind === "fan",
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "springs",
+                                index: j,
+                                set: (e, t) => springReplace(e, t, {
+                                    kind: "fan",
+                                    height: 120,
+                                    width: 90,
+                                    snapSize: { offsetY: 0 }
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                      ],
+                    },
                     {
                       name: "Direction",
                       options: [
@@ -42442,16 +42629,16 @@ var version = "v1.18.1";
                       }),
                       ScrollHandler.Single({
                         id: "ScrollHandler",
-                        onScaleDelta: (t) => {
+                        onScaleDelta: (t, event) => {
                           e.setSettings({
-                            viewOffset: r.keysDown.Control
+                            viewOffset: event.ctrlKey
                               ? pr(
                                   d,
                                   B.clamp2(dr, cr, d.scale * (1 - t / 1000)),
                                   { x: r.pointer.x, y: r.pointer.y },
                                 )
-                              : r.keysDown.Shift
-                                ? { x: d.x + t * 0.9, y: d.y, scale: d.scale }
+                              : r.keysDown.Shift || event.deltaX !== 0
+                                ? { x: d.x + (event.deltaX * -1 || t) * 0.9, y: d.y, scale: d.scale }
                                 : { x: d.x, y: d.y + t * 0.9, scale: d.scale },
                           });
                         },
@@ -42664,6 +42851,7 @@ var version = "v1.18.1";
                     spineContext: getContext(Ws),
                     paused: pauseAnimations,
                     scale: propsScale,
+                    frame: frame,
                   }),
                 ),
                 ...h.portals.map((e, t) =>
@@ -42987,6 +43175,7 @@ var version = "v1.18.1";
                     spineContext: spineContext,
                     paused: paused,
                     scale: scale,
+                    frame: frame
                   });
                 case "portal":
                   return Jo.Single({
@@ -43050,8 +43239,8 @@ var version = "v1.18.1";
             init({ props: e }) {
               const t = (t) =>
                 e.addToOnScrollQueue(() => {
-                  1 === t.deltaMode && e.onScaleDelta(t.deltaY * (100 / 6));
-                  0 === t.deltaMode && e.onScaleDelta(t.deltaY);
+                  1 === t.deltaMode && e.onScaleDelta(t.deltaY * (100 / 6), t);
+                  0 === t.deltaMode && e.onScaleDelta(t.deltaY, t);
                 });
               return (
                 document.addEventListener("wheel", t, { passive: true }),
@@ -43689,8 +43878,12 @@ var version = "v1.18.1";
                 bottomLineTheme,
                 disableReleaseBuffer,
                 useBoosterDebug,
+                freezeOnDeath
               } = e,
               { levelState: U } = L;
+
+            let freeze = (U.crashed || U.finishedLevel) && freezeOnDeath;
+
             if (!useBoosterDebug || N) {
               U.boosterDebug = null;
             };
@@ -43698,7 +43891,7 @@ var version = "v1.18.1";
               U.score.fullCombo = true;
               U.score.perfectCombo = true;
             }
-            U.frame += df;
+            U.frame += freeze ? 0 : df;
             const { a: j, b: V } = A;
             if (U.boosterDebug) {
             if (playerInput === "justDown") {
@@ -43734,8 +43927,9 @@ var version = "v1.18.1";
               fullLayoutStateIndexes =
                 (null == D ? void 0 : D.fullLayoutStateIndexes) ||
                 xa.getEmptyStateIndexes();
+                
             if (
-              (Ca.setInViewLayoutAndState(
+              ((freeze || Ca.setInViewLayoutAndState(
                 _.layout,
                 U.frame,
                 C,
@@ -43749,15 +43943,15 @@ var version = "v1.18.1";
                 inViewLayout,
                 inViewLayoutState,
                 fullLayoutStateIndexes,
-                U.fallTypes,
-              ),
+                U.fallTypes
+              )),
               x)
             )
               return void (U.frame -= df);
             if (U.crashed || U.finishedLevel) {
               if (
                 (null !== L.resetTimer && L.resetTimer--,
-                cl(
+                (freeze || cl(
                   U,
                   df,
                   w,
@@ -43775,8 +43969,8 @@ var version = "v1.18.1";
                   () => false,
                   v,
                   V,
-                ),
-                U.playerBullets &&
+                )),
+                U.playerBullets && !freeze &&
                   xa.updateHitBulletState(
                     U.frame,
                     inViewLayout,
@@ -43801,7 +43995,7 @@ var version = "v1.18.1";
                 O(e.frame, U.checkpoint.index);
                 const t = Ca.getInitFirstIndexes();
                 return (
-                  Ca.setInViewLayoutAndState(
+                  freeze || Ca.setInViewLayoutAndState(
                     _.layout,
                     e.frame,
                     C,
@@ -43816,6 +44010,7 @@ var version = "v1.18.1";
                     inViewLayoutState,
                     fullLayoutStateIndexes,
                     e.fallTypes,
+                    e.crashed || e.finishedLevel
                   ),
                   (e.attempt = U.attempt + 1),
                   (useCheckpointState || (e.checkpoint = {
@@ -43956,7 +44151,9 @@ var version = "v1.18.1";
                   U.justHitObject = {
                     array: "switchButtons",
                     index: toggleGravity,
+                    L.landTimer = et.landTimerLimit;
                   };
+                  U.isGravity = false;
                   U.dashing = false;
                   if (g < 2) {
                     (g == 0
@@ -44589,12 +44786,20 @@ var version = "v1.18.1";
                 ),
                 U.collectibles++,
                 null == v || v.hitCollectible()));
-            const touchedSpring = inViewLayout.springs.findIndex((e) => Z(e));
+            let touchedSpring = inViewLayout.springs.findIndex((e) => e.kind !== "fan" && Z(e));
+            if (touchedSpring === -1) {
+              touchedSpring = inViewLayout.springs.findIndex((e) => e.kind === "fan" && Z(e));
+            }
             const checkSprings = (idx, stack) => {
               if (stack) {
                 idx = inViewLayout.springs.findIndex((e) =>
-                  stackCollide(stack)(e),
+                  e.kind !== "fan" &&  stackCollide(stack)(e),
                 );
+                if (idx === -1) {
+                  idx = inViewLayout.springs.findIndex((e) =>
+                    e.kind === "fan" &&  stackCollide(stack)(e),
+                  );
+                }
               }
               var setY = (y) => (stack ? (stack.y = y) : (U.playerY = y));
               var setGradY = (y) =>
@@ -44606,6 +44811,10 @@ var version = "v1.18.1";
                   : U.playerGradY;
               if (-1 !== idx) {
                 const spring = inViewLayout.springs[idx];
+                if (spring.kind === "fan") {
+                  setGradY(Math.max(gradY + (V - gradY) / 5 * (spring.direction < 0 ? -0.5 : 1), -V));
+                  return;
+                };
                 (stack ||
                   (U.jumping = U.playerPowerups.some(
                     (e) => e.item === "spaceship",
@@ -44676,7 +44885,7 @@ var version = "v1.18.1";
                   U.playerScaleY,
                   U.dashing ? 0 : U.playerRot,
                   skating,
-                  K,
+                  U.switchBlockSpikes,
                 )),
                 null == v || v.hitPortal()));
             const re = inViewLayout.powerups.findIndex((e, t) => {
@@ -46021,6 +46230,13 @@ var version = "v1.18.1";
                 author: "Colbreakz",
                 bpm: 128,
                 fileName: "audio/tracks/colbreakz-memories.mp3",
+              },
+              essence: {
+                name: "Essence",
+                author: "DJVI",
+                bpm: 170,
+                fileName: "audio/tracks/djvi-essence.mp3"
+
               },
               
             },
@@ -49686,6 +49902,7 @@ var version = "v1.18.1";
             e[(e.ParadiseOnE = 68)] = "ParadiseOnE";
             e[(e.Rattlesnake = 69)] = "Rattlesnake";
             e[(e.Memories = 70)] = "Memories";
+            e[(e.Essence = 71)] = "Essence";
           })(Nd || (Nd = {})),
           (function (e) {
             ((e[(e.World1 = 0)] = "World1"),
@@ -49861,7 +50078,7 @@ var version = "v1.18.1";
                   ]),
                 ),
                 Oc(Gc([fc, fc, nd.enum2])),
-                Oc(Bc([Gc([fc, fc, nd.enum2]), Gc([fc, fc])])),
+                Oc(Bc([Gc([fc, fc, nd.enum2, nd.enum2]), Gc([fc, fc, nd.enum2]), Gc([fc, fc])])),
                 Oc(nd.tuple([fc, fc, nd.enum4, fc, nd.enum2])),
                 Oc(Gc([fc, fc, nd.enum2])),
                 Oc(Gc([fc, fc, nd.enum2, nd.enum3])),
@@ -50013,7 +50230,7 @@ var version = "v1.18.1";
                   ]),
                 ),
                 Oc(Gc([fc, fc, nd.enum2])),
-                Oc(Bc([Gc([fc, fc, nd.enum2]), Gc([fc, fc])])),
+                Oc(Bc([Gc([fc, fc, nd.enum2, nd.enum2]), Gc([fc, fc, nd.enum2]), Gc([fc, fc])])),
                 Oc(nd.tuple([fc, fc, nd.enum4, fc, nd.enum2])),
                 Oc(Gc([fc, fc, nd.enum2])),
               ]),
@@ -50274,8 +50491,8 @@ var version = "v1.18.1";
                     collectibles: y.map(([e, t, a]) =>
                       $.newCollectible({ x: e, y: t, form: su[a] }),
                     ),
-                    springs: E.map(([e, t, a]) =>
-                      $.newSpring({ x: e, y: t, direction: a ? -1 : 1 }),
+                    springs: E.map(([e, t, a, i]) =>
+                      $.newSpring({ x: e, y: t, direction: a === 1 ? -1 : 1, kind: i === 1 ? "fan" : "spring" }),
                     ),
                     portals: b.map(([e, t, a, i, n]) =>
                       $.newPortal({
@@ -50524,7 +50741,7 @@ var version = "v1.18.1";
                     }),
                     i.collectibles.map((e) => [e.x, e.y, ru(e.form, su)]),
                     i.springs.map((e) =>
-                      e.direction < 0 ? [e.x, e.y, 1] : [e.x, e.y],
+                      e.kind === "fan" ? [e.x, e.y, e.direction < 0 ? 1 : 0, 1] : e.direction < 0 ? [e.x, e.y, 1] : [e.x, e.y],
                     ),
                     i.portals.map((e) => [
                       e.x,
@@ -50657,6 +50874,7 @@ var version = "v1.18.1";
             [Nd.ParadiseOnE]: hl.songs.paradiseOnE,
             [Nd.Rattlesnake]: hl.songs.rattlesnake,
             [Nd.Memories]: hl.songs.memories,
+            [Nd.Essence]: hl.songs.essence,
           },
           Hd = {
             [ld.Rot0]: 0,
@@ -51202,14 +51420,14 @@ var version = "v1.18.1";
               ),
               fc,
               Bc([
-                nd.tuple([
-                  yc,
-                  yc,
+                nd.tuple([yc,yc,
                   yc,
                   yc,
                   yc,
                   yc,
                   fc,
+                  yc,
+                  yc,
                   yc,
                   yc,
                   yc,
@@ -51247,6 +51465,7 @@ var version = "v1.18.1";
                   debug,
                   release,
                   animate,
+                  freeze
                 ],
                 d,
               ] = e;
@@ -51279,6 +51498,7 @@ var version = "v1.18.1";
                   hideUi: r,
                   muteMenuMusic: l,
                   headphonesDelay: c,
+                  freezeOnDeath: freeze,
                   overlapObjects: overlap || false,
                   tig1menu: tm || false,
                   mirrorMenuButton: mirror || false,
@@ -51332,7 +51552,7 @@ var version = "v1.18.1";
                 e.settings.showDebug || false,
                 e.settings.disableReleaseBuffer || false,
                 e.settings.animateEditor || false,
-                false,
+                e.settings.freezeOnDeath || false,
               ],
               e.friendRequests.map((e) => [e.profileId, e.playerName]),
             ],
@@ -61282,6 +61502,7 @@ var version = "v1.18.1";
                       playerX: e.playerX,
                       fallTypes: e.fallTypes,
                     },
+                    frame: e.frame
                   }),
                   update: (t, a, i) => {
                     ((t.spring = a),
@@ -61293,7 +61514,9 @@ var version = "v1.18.1";
                       (t.paused = e.paused),
                       (t.inGame.playerX = e.playerX),
                       (t.inGame.fallTypes = e.fallTypes),
-                      (t.inGame.playerDir = e.playerDir));
+                      (t.inGame.playerDir = e.playerDir),
+                      (t.frame = e.frame)
+                    );
                   },
                   array: () => e.layout.springs,
                   key: (t, a) => e.layoutStateIndex.springs[a],
@@ -61776,6 +61999,9 @@ var version = "v1.18.1";
                                   }, // for now, hehehe...
                             playerRot: e.playerRot,
                             playerScale: e.playerScale,
+                            playerScaleX: e.playerScaleX,
+                            playerScaleY: e.playerScaleY,
+                            playerRot: e.playerRot,
                             df: e.df,
                           },
                           (t) => {
@@ -62218,6 +62444,8 @@ var version = "v1.18.1";
                     playerRot: e.playerRot,
                     df: e.df,
                     playerScale: e.playerScale,
+                    playerScaleX: e.playerScaleX,
+                    playerScaleY: e.playerScaleY,
                   }),
                   update: (t) => {
                     ((t.paused = e.paused), (t.df = e.df));
@@ -63115,7 +63343,7 @@ var version = "v1.18.1";
                     {
                       containerHeight: a.size.fullHeight - 70 + 50,
                       containerWidth: a.size.fullWidth,
-                      contentHeight: 850,
+                      contentHeight: 900,
                       y: (a.size.fullHeight - 70) / 2 + 35,
                       sprites: (o) => [
                         c({
@@ -63513,7 +63741,26 @@ var version = "v1.18.1";
                               (e.noPress = o.ref));
                           },
                         ),
-                        /*Rm.Single(
+                        Rm.Single(
+                          {
+                            text: "FREEZE ON DEATH",
+                            selected: false,
+                            onPress: () => {
+                              var a;
+                              const { settings: i, updateSettings: n } = t(Se);
+                              n({ freezeOnDeath: !i.freezeOnDeath });
+                            },
+                            width: 250,
+                            height: 40,
+                            y: -750,
+                          },
+                          (e) => {
+                            const { settings: a } = t(Se);
+                            ((e.selected = a.freezeOnDeath),
+                              (e.noPress = o.ref));
+                          },
+                        ),
+                        Rm.Single(
                           {
                             text: '"INFINITE" TRAIL',
                             selected: false,
@@ -63524,13 +63771,13 @@ var version = "v1.18.1";
                             },
                             width: 250,
                             height: 40,
-                            y: -750,
+                            y: -800,
                           },
                           (e) => {
                             const { settings: a } = t(Se);
                             ((e.selected = a.flyingTrail), (e.noPress = o.ref));
                           },
-                        ),*/
+                        ),
                         Rm.Single(
                           {
                             text: "SHOW DEBUG INFO",
@@ -63562,7 +63809,7 @@ var version = "v1.18.1";
                             },
                             width: 250,
                             height: 40,
-                            y: -800,
+                            y: -850,
                           },
                           (e) => {
                             const { settings: a } = t(Se);
@@ -65203,7 +65450,7 @@ var version = "v1.18.1";
                   f,
                   y,
                   E,
-                  d.fallTypes,
+                  d.fallTypes
                 ),
                 null === (o = t.didStart) ||
                   void 0 === o ||
@@ -65600,6 +65847,7 @@ var version = "v1.18.1";
                   onCrash: t.onCrash,
                   onReset: t.onReset,
                   disableReleaseBuffer: y.disableReleaseBuffer,
+                  freezeOnDeath: y.freezeOnDeath
                 }),
                 oldPowerupsLength -
                   t.mutValues.levelState.playerPowerups.filter(
