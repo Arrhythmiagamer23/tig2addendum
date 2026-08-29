@@ -17807,9 +17807,15 @@ var version = "v1.18.2";
             size: 66,
             trail: ct({ topColour: "#FFF142", bottomColour: "#C57700" }),
           },
+          ZSt = {
+            name: "Developer Hat",
+            fileName: "dev",
+            size: 47,
+            trail: ct(),
+          },
           Xt = {
             name: "FlukeDude Hat",
-            fileName: "dev",
+            fileName: "fluke",
             size: 47,
             trail: ct(),
           },
@@ -18083,6 +18089,7 @@ var version = "v1.18.2";
               hidden: true,
             },
             dev: Xt,
+            fluke: ZSt,
           },
           Wt = {
             skins: zt,
