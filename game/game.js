@@ -63757,7 +63757,7 @@ var version = "v1.18.2";
                               (e.noPress = o.ref));
                           },
                         ),
-                        Rm.Single(
+                        /*Rm.Single(
                           {
                             text: '"INFINITE" TRAIL',
                             selected: false,
@@ -63768,13 +63768,13 @@ var version = "v1.18.2";
                             },
                             width: 250,
                             height: 40,
-                            y: -800,
+                            y: -750,
                           },
                           (e) => {
                             const { settings: a } = t(Se);
                             ((e.selected = a.flyingTrail), (e.noPress = o.ref));
                           },
-                        ),
+                        ),*/
                         Rm.Single(
                           {
                             text: "SHOW DEBUG INFO",
@@ -63786,7 +63786,7 @@ var version = "v1.18.2";
                             },
                             width: 250,
                             height: 40,
-                            y: -750,
+                            y: -800,
                           },
                           (e) => {
                             const { settings: a } = t(Se);
