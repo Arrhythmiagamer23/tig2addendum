@@ -35371,7 +35371,7 @@ var version = "v1.18.2";
                               () => [
                                 y(
                                   {
-                                    fileName: `images/themes/${e.theme.includes("infinite") ? e.theme : e.orbTheme == "classic" ? "classic" : e.orbTheme == "stylemix" ? "classic" : e.orbTheme == "geometrydash" ? "classic" : "world1"}/doubleJump.png`,
+                                    fileName: `images/themes/${e.theme.includes("infinite") ? e.theme : e.orbTheme == "classic" ? "classic" : e.orbTheme == "geometrydash" ? "classic" : e.orbTheme == "stylemix" ? "classic" : "world1"}/doubleJump.png`,
                                     width: e.switchButton.width,
                                     height: e.switchButton.height,
                                   },
