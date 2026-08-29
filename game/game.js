@@ -49737,7 +49737,9 @@ var version = "v1.18.2";
               (e[(e.World4Boss = 9)] = "World4Boss"),
               (e[(e.World3Red = 10)] = "World3Red"),
               (e[(e.Skater = 11)] = "Skater"),
-              (e[(e.StyleMix = 12)] = "StyleMix"));
+              (e[(e.StyleMix = 12)] = "StyleMix"),
+              (e[(e.Ice = 13)] = "Ice"),
+              (e[(e.GeometryDash = 14)] = "GeometryDash"));
           })(rd || (rd = {})),
           (function (e) {
             ((e[(e.Rot0 = 0)] = "Rot0"),
@@ -79148,7 +79150,7 @@ var version = "v1.18.2";
               maxHeightMargin: 150,
             },
             defaultFont: { family: "Pusab", size: 10, weight: 900 },
-            backgroundColor: "#0d0735",
+            backgroundColor: Ue,
           },
           GE = window.onerror;
         window.onerror = (e, t, a, i, n) => {
