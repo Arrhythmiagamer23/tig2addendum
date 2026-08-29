@@ -46278,6 +46278,13 @@ var version = "v1.18.2";
                 bpm: 120,
                 fileName: "audio/tracks/creo-carnivores.mp3",
               },
+              rattlesnake: {
+                name: "Rattlesnake",
+                author: "Evilwave & Teminite",
+                fileName: "audio/tracks/evilwave-rattlesnake.mp3",
+                bpm: 150,
+                isBonusSong: false,
+              },
               essence: {
                 name: "Essence",
                 author: "DJVI",
