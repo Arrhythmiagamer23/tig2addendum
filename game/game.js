@@ -43876,7 +43876,7 @@ var version = "v1.18.2";
                 bottomLineTheme,
                 disableReleaseBuffer,
                 useBoosterDebug,
-                freezeOnDeath,
+                freezeOnDeath
               } = e,
               { levelState: U } = L;
 
@@ -43941,7 +43941,7 @@ var version = "v1.18.2";
                 inViewLayout,
                 inViewLayoutState,
                 fullLayoutStateIndexes,
-                U.fallTypes,
+                U.fallTypes
               )),
               x)
             )
