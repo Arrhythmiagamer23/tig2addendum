@@ -59335,7 +59335,7 @@ var version = "v1.18.2";
                                   "images/themes/geometrydash/background/BG.png",
                                 playerX: 0 * e.cameraX,
                                 playerY: 0 * e.cameraY,
-                                height: 718,
+                                height: 960,
                                 y: 0,
                               },
                              (t) => {
