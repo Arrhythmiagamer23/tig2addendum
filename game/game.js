@@ -30790,7 +30790,7 @@ var version = "v1.18.2";
               case "infinite":
                 return ["images/themes/infinite/background/tile.png"];
               case "ice":
-                return ["images/themes/ice/BG/SnowParallax1.png"];
+                return ["images/themes/ice/BG/SnowParallax.png"];
               case "red":
                 return [
                   "images/themes/red/background/background.png",
@@ -59250,7 +59250,7 @@ var version = "v1.18.2";
                             dg.Single(
                               {
                                 fileName:
-                                  "images/themes/ice/BG/SnowParallax1.png",
+                                  "images/themes/ice/BG/SnowParallax.png",
                                 playerX: 0 * e.cameraX,
                                 playerY: 0,
                                 height: 718,
