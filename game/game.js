@@ -17802,13 +17802,13 @@ var version = "v1.18.2";
             trail: ct({ topColour: "#E51C04", bottomColour: "#820F1B" }),
           },
           Ht = {
-            name: "Tester's Hat (For You)",
+            name: "Tester Thumb",
             fileName: "tester",
             size: 66,
             trail: ct({ topColour: "#FFF142", bottomColour: "#C57700" }),
           },
           Xt = {
-            name: "Developer's Hat (From FlukeDude)",
+            name: "FlukeDude Hat",
             fileName: "dev",
             size: 47,
             trail: ct(),
@@ -47766,9 +47766,9 @@ var version = "v1.18.2";
               difficulty: 2,
             },
             {
-              levelName: "Frontier",
-              levelFileName: "frontier",
-              song: hl.songs.frontier,
+              levelName: "Lighthouse",
+              levelFileName: "lighthouse",
+              song: hl.songs.lighthouse,
               unlockedByIndex: 0,
               x: -140,
               y: 40,
@@ -47778,6 +47778,34 @@ var version = "v1.18.2";
               ],
               maxFrames: 9377,
               difficulty: 5,
+            },
+            {
+              levelName: "Frontier",
+              levelFileName: "frontier",
+              song: hl.songs.frontier,
+              unlockedByIndex: 0,
+              x: -140,
+              y: 60,
+              pathToLevel: [
+                [-220, 0],
+                [-180, 40],
+              ],
+              maxFrames: 9377,
+              difficulty: 5,
+            },
+            {
+              levelName: "Polymorph",
+              levelFileName: "polymorph",
+              song: hl.songs.polymorph,
+              unlockedByIndex: 1,
+              x: -60,
+              y: -100,
+              pathToLevel: [
+                [-120, -20],
+                [-100, -80],
+              ],
+              maxFrames: 9156,
+              difficulty: 8,
             },
             {
               levelName: "Theory Of Everything 3",
@@ -47825,15 +47853,40 @@ var version = "v1.18.2";
           ],
           Yl = [
             {
-              levelName: "True Colors",
-              levelFileName: "true-colors",
-              song: hl.songs.truecolors,
+              levelName: "Blythe",
+              levelFileName: "blythe",
+              song: hl.songs.blythe,
               unlockedByIndex: null,
               x: -240,
               y: 30,
               pathToLevel: [],
               maxFrames: 10420,
               difficulty: 3,
+            },
+            {
+              levelName: "True Colors",
+              levelFileName: "true-colors",
+              song: hl.songs.truecolors,
+              unlockedByIndex: null,
+              x: -240,
+              y: 40,
+              pathToLevel: [],
+              maxFrames: 10420,
+              difficulty: 3,
+            },
+            {
+              levelName: "Awake",
+              levelFileName: "awake",
+              song: hl.songs.awake,
+              unlockedByIndex: 0,
+              x: -100,
+              y: 0,
+              pathToLevel: [
+                [-220, 30],
+                [-130, 0],
+              ],
+              maxFrames: 10111,
+              difficulty: 4,
             },
             {
               levelName: "Color",
@@ -47844,7 +47897,7 @@ var version = "v1.18.2";
               y: 0,
               pathToLevel: [
                 [-220, 30],
-                [-130, 0],
+                [-170, 0],
               ],
               maxFrames: 10111,
               difficulty: 4,
@@ -47876,6 +47929,21 @@ var version = "v1.18.2";
               ],
               maxFrames: 11714,
               difficulty: 10,
+            },
+            {
+              levelName: "Rattlesnake",
+              levelFileName: "rattlesnake",
+              song: hl.songs.rattlesnake,
+              unlockedByIndex: 2,
+              x: 140,
+              y: -120,
+              pathToLevel: [
+                [120, 5],
+                [130, 0],
+              ],
+              maxFrames: 11714,
+              difficulty: 10,
+              comingSoon: true,
             },
             {
               levelName: "Overdrive",
@@ -78266,7 +78334,7 @@ var version = "v1.18.2";
                   }
               }
             },
-          PE = ["#6b0d54", "#be1c6a", "#c5452d", "#11b07f", "#c59413"],
+          PE = ["#0af167", "#ee70a6", "#520099", "#39eafd", "#a389ff", "#dba7c5", "#de0af1", "#0af1b7", "#f5f5f5"],
           ME = makeCustomSprite({
             init({ device: { random: e, size: t } }) {
               const a = t.width + 2 * t.widthMargin,
@@ -78927,7 +78995,7 @@ var version = "v1.18.2";
               maxHeightMargin: 150,
             },
             defaultFont: { family: "Pusab", size: 10, weight: 900 },
-            backgroundColor: Ue,
+            backgroundColor: "#0d0735",
           },
           GE = window.onerror;
         window.onerror = (e, t, a, i, n) => {
