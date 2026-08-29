@@ -46288,14 +46288,13 @@ var version = "v1.18.2";
                 name: "Essence",
                 author: "DJVI",
                 bpm: 170,
-                fileName: "audio/tracks/djvi-essence.mp3"
+                fileName: "audio/tracks/djvi-essence.mp3",
               },
               snowdown: {
                 name: "Snowdown (VIP Mix)",
                 author: "MDK",
                 bpm: 128,
-                fileName: "audio/tracks/mdk-snowdown.mp3"
-              
+                fileName: "audio/tracks/mdk-snowdown.mp3",
               },
             },
             getSnippetName: (e) => e.replace("audio/tracks", "audio/snippets"),
