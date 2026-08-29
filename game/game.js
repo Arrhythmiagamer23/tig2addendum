@@ -46247,7 +46247,6 @@ var version = "v1.18.2";
                 fileName: "audio/tracks/onefin-stardew-plummet.mp3",
                 bpm: 134,
               },
-              
               hellidox: {
                 name: "Hellidox",
                 author: "Exilelord",
