@@ -49706,7 +49706,8 @@ var version = "v1.18.2";
               (e[(e.World4Boss = 9)] = "World4Boss"),
               (e[(e.World3Red = 10)] = "World3Red"),
               (e[(e.Skater = 11)] = "Skater"),
-              (e[(e.StyleMix = 12)] = "StyleMix"));
+              (e[(e.StyleMix = 12)] = "StyleMix"),
+              (e[(e.Ice = 13)] = "Ice"));
           })(rd || (rd = {})),
           (function (e) {
             ((e[(e.Rot0 = 0)] = "Rot0"),
@@ -49889,6 +49890,7 @@ var version = "v1.18.2";
             e[(e.Infinite = 17)] = "Infinite";
             e[(e.Virtual = 18)] = "Virtual";
             e[(e.StyleMix = 19)] = "StyleMix";
+            e[(e.Ice = 20)] = "Ice";
           })(Od || (Od = {})),
           (function (e) {
             ((e[(e.Gun = 0)] = "Gun"),
@@ -50020,6 +50022,7 @@ var version = "v1.18.2";
             e[(e.Infinite = 17)] = "Infinite";
             e[(e.Virtual = 18)] = "Virtual";
             e[(e.StyleMix = 19)] = "StyleMix";
+            e[(e.Ice = 20)] = "Ice";
           })(xd || (xd = {})));
         const Bd = Gc([
             mc,
@@ -50895,6 +50898,7 @@ var version = "v1.18.2";
             [xd.Classic]: "classic",
             [xd.Infinite]: "infinite",
             [xd.StyleMix]: "stylemix",
+            [xd.Ice]: "ice",
             [xd.Virtual]: "virtual",
           },
           Vd = {
