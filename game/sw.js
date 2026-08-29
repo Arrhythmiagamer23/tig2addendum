@@ -498,16 +498,6 @@ var version = "1.1.3",
     `images/themes/world4/block-light.png`,
     `images/themes/world4/spike.png`,
     `images/themes/world4/boss.png`,
-
-    `images/themes/ice/block.png`,
-    `images/themes/ice/block-light.png`,
-    `images/themes/ice/spike.png`,
-    `images/themes/ice/boss.png`,
-    
-    `images/themes/geometrydash/block.png`,
-    `images/themes/geometrydash/block-light.png`,
-    `images/themes/geometrydash/spike.png`,
-    `images/themes/geometrydash/boss.png`,
   ],
   skins = [
     "alien",
