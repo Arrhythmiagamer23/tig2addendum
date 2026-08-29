@@ -46284,23 +46284,19 @@ var version = "v1.18.2";
                 bpm: 128,
                 fileName: "audio/tracks/colbreakz-memories.mp3",
               },
-
               essence: {
                 name: "Essence",
                 author: "DJVI",
                 bpm: 170,
                 fileName: "audio/tracks/djvi-essence.mp3"
-
               },
-
               snowdown: {
                 name: "Snowdown (VIP Mix)",
                 author: "MDK",
                 bpm: 128,
                 fileName: "audio/tracks/mdk-snowdown-vip-mix.mp3"
-
-              },
               
+              },
             },
             getSnippetName: (e) => e.replace("audio/tracks", "audio/snippets"),
           },
