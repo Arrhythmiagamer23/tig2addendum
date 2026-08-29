@@ -43876,7 +43876,7 @@ var version = "v1.18.2";
                 bottomLineTheme,
                 disableReleaseBuffer,
                 useBoosterDebug,
-                freezeOnDeath
+                freezeOnDeath,
               } = e,
               { levelState: U } = L;
 
@@ -43941,7 +43941,7 @@ var version = "v1.18.2";
                 inViewLayout,
                 inViewLayoutState,
                 fullLayoutStateIndexes,
-                U.fallTypes
+                U.fallTypes,
               )),
               x)
             )
@@ -44008,7 +44008,7 @@ var version = "v1.18.2";
                     inViewLayoutState,
                     fullLayoutStateIndexes,
                     e.fallTypes,
-                    e.crashed || e.finishedLevel
+                    e.crashed || e.finishedLevel,
                   ),
                   (e.attempt = U.attempt + 1),
                   (useCheckpointState || (e.checkpoint = {
@@ -51463,7 +51463,7 @@ var version = "v1.18.2";
                   debug,
                   release,
                   animate,
-                  freeze
+                  freeze,
                 ],
                 d,
               ] = e;
@@ -65450,7 +65450,7 @@ var version = "v1.18.2";
                   f,
                   y,
                   E,
-                  d.fallTypes
+                  d.fallTypes,
                 ),
                 null === (o = t.didStart) ||
                   void 0 === o ||
@@ -65847,7 +65847,7 @@ var version = "v1.18.2";
                   onCrash: t.onCrash,
                   onReset: t.onReset,
                   disableReleaseBuffer: y.disableReleaseBuffer,
-                  freezeOnDeath: y.freezeOnDeath
+                  freezeOnDeath: y.freezeOnDeath,
                 }),
                 oldPowerupsLength -
                   t.mutValues.levelState.playerPowerups.filter(
