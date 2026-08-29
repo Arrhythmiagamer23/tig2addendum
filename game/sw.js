@@ -442,6 +442,11 @@ var version = "1.1.3",
     `images/themes/world1Boss/bottom/block.png`,
     `images/themes/skater/bottom/block.png`,
 
+    `images/themes/ice/bottom/block-small-spike.png`,
+    `images/themes/ice/bottom/block-spike-corner.png`,
+    `images/themes/ice/bottom/block-spike.png`,
+    `images/themes/ice/bottom/block.png`,
+
     `images/themes/world1/bottom/double-tall-block-spike.png`,
     `images/themes/world1/bottom/tall-block-spike.png`,
     `images/themes/world2/bottom/block-small-spike.png`,
