@@ -503,6 +503,7 @@ var version = "1.1.3",
     `images/themes/ice/block-light.png`,
     `images/themes/ice/spike.png`,
     `images/themes/ice/boss.png`,
+    
     `images/themes/geometrydash/block.png`,
     `images/themes/geometrydash/block-light.png`,
     `images/themes/geometrydash/spike.png`,

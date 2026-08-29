@@ -31189,7 +31189,7 @@ var version = "v1.18.2";
                   ]
                 : []),
               ...("world3" === e.objects.bottom ||
-              "classic" === e.objects.bottom || "stylemix" === e.objects.bottom
+              "classic" === e.objects.bottom || "geometrydash" === e.objects.bottom || "stylemix" === e.objects.bottom
                 ? [
                     "images/themes/world3/bottom/laser-line.png",
                     "images/themes/world4/bottom/block.png",
@@ -31199,6 +31199,7 @@ var version = "v1.18.2";
                     `images/themes/classic/bottom/block.png`,
                     "images/themes/skater/bottom/block.png",
                     `images/themes/infinite/bottom/block.png`,
+                    `images/themes/geometrydash/bottom/block.png`,
                   ]
                 : [
                     `images/themes/${e.objects.bottom}/bottom/block-small-spike.png`,
@@ -59335,7 +59336,7 @@ var version = "v1.18.2";
                                 playerX: 0 * e.cameraX,
                                 playerY: 0 * e.cameraY,
                                 height: 718,
-                                y: 50,
+                                y: 0,
                               },
                              (t) => {
                                 ((t.playerX = 0.05 * e.cameraX),
