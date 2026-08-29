@@ -30789,6 +30789,8 @@ var version = "v1.18.2";
                 return ["images/themes/classic/background/fade.png"];
               case "infinite":
                 return ["images/themes/infinite/background/tile.png"];
+              case "ice":
+                return ["images/themes/ice/BG/SnowParallax1.png"];
               case "red":
                 return [
                   "images/themes/red/background/background.png",
@@ -30846,11 +30848,6 @@ var version = "v1.18.2";
                   "images/themes/speed/moon.png",
                   "images/themes/speed/red_moon.png",
                   "images/themes/speed/plan1.png",
-                  "images/themes/speed/ash.png",
-                ];
-              case "ice":
-                return [
-                  "images/themes/ice/BG/SnowParallax1.png",
                   "images/themes/speed/ash.png",
                 ];
             }
