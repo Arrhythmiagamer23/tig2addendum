@@ -574,6 +574,7 @@ var version = "1.1.3",
     "meganeko-daydreamer.mp3",
     "miami-nights-1984-accelerated.mp3",
     "colbreakz-memories.mp3",
+    "djvi-essence.mp3",
 
     "nitro-fun-dragonfly.mp3",
     "panda-eyes-think-different.mp3",
@@ -635,6 +636,8 @@ var filesToCache = [
   "audio/tracks/monstaz-popcorn-funk-credits.mp3",
   "audio/tracks/monstaz-popcorn-funk.mp3",
   "audio/tracks/rustic-runes.mp3",
+  "audio/tracks/infractionmusic-radiofeelings.mp3",
+  "audio/tracks/infractionmusic-radiofeelings-credits.mp3",
   ...songs.map((name) => `audio/tracks/${name}`),
   ...songs.map((name) => `audio/snippets/${name}`),
 ];
