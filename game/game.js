@@ -31174,6 +31174,7 @@ var version = "v1.18.2";
                     "images/themes/world4/bottom/block.png",
                     "images/themes/world3/bottom/block.png",
                     "images/themes/world1/bottom/block.png",
+                    "images/themes/ice/bottom/block.png",
                     `images/themes/classic/bottom/block.png`,
                     "images/themes/skater/bottom/block.png",
                     `images/themes/infinite/bottom/block.png`,
