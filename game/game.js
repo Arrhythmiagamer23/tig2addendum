@@ -18387,7 +18387,7 @@ var version = "v1.18.2";
             },
             ice: {
               id: "ice",
-              name: "Ice",
+              name: "Snow",
               colour: "#92d2fc",
               player: Wt.skins.default,
               background: "ice",
@@ -30790,7 +30790,7 @@ var version = "v1.18.2";
               case "infinite":
                 return ["images/themes/infinite/background/tile.png"];
               case "ice":
-                return ["images/themes/ice/BG/SnowParallax.png"];
+                return ["images/themes/ice/background/SnowParallax.png"];
               case "red":
                 return [
                   "images/themes/red/background/background.png",
@@ -59254,7 +59254,7 @@ var version = "v1.18.2";
                             dg.Single(
                               {
                                 fileName:
-                                  "images/themes/ice/BG/SnowParallax.png",
+                                  "images/themes/ice/background/SnowParallax.png",
                                 playerX: 0 * e.cameraX,
                                 playerY: 0,
                                 height: 718,
