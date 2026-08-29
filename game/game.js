@@ -18378,6 +18378,25 @@ var version = "v1.18.2";
               },
               isBonusTheme: true,
             },
+            ice: {
+              id: "ice",
+              name: "Ice",
+              colour: "#92d2fc",
+              player: Wt.skins.default,
+              background: "ice",
+              objects: {
+                block: "ice",
+                spike: "ice",
+                platform: "world1",
+                dirChange: "world1",
+                flag: "world1",
+                saw: "world1",
+                bottom: "world1",
+                switch: "world3",
+                speedChange: "speed",
+              },
+              isBonusTheme: true,
+            },
             synthwave: ta,
             world1: Jt,
             red: Kt,
@@ -30820,6 +30839,11 @@ var version = "v1.18.2";
                   "images/themes/speed/moon.png",
                   "images/themes/speed/red_moon.png",
                   "images/themes/speed/plan1.png",
+                  "images/themes/speed/ash.png",
+                ];
+              case "ice":
+                return [
+                  "images/themes/ice/BG/SnowParallax1.png",
                   "images/themes/speed/ash.png",
                 ];
             }
@@ -59180,6 +59204,49 @@ var version = "v1.18.2";
                               {
                                 fileName:
                                   "images/themes/stylemix/BG.png",
+                                playerX: 0 * e.cameraX,
+                                playerY: 0,
+                                height: 718,
+                                y: 50,
+                              },
+                             (t) => {
+                                ((t.playerX = 0.05 * e.cameraX),
+                                (t.playerY = 0));
+                              },
+                            ),
+                          ];
+                        case "ice":
+                          return [
+                            Go.Single(
+                              {
+                                targetOpacity: 1,
+                                targetColor: e.bgColor || "#93c2ff",
+                                sprite: (s, k) => [
+                                  p(
+                                    {
+                                      color: k.ref,
+                                      width: t.size.fullWidth,
+                                      height: t.size.fullHeight,
+                                      opacity: 1,
+                                    },
+                                    (j) => (
+                                      (j.width = t.size.fullWidth),
+                                      (j.height = t.size.fullHeight),
+                                      (j.color = k.ref),
+                                      (j.opacity = 1)
+                                    ),
+                                  ),
+                                ],
+                              },
+                              (t) => {
+                                t.targetOpacity = 1;
+                                t.targetColor = e.bgColor || "#93c2ff";
+                              },
+                            ),
+                            dg.Single(
+                              {
+                                fileName:
+                                  "images/themes/ice/BG/SnowParallax1.png",
                                 playerX: 0 * e.cameraX,
                                 playerY: 0,
                                 height: 718,
