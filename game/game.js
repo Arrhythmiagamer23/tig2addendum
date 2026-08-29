@@ -18404,6 +18404,25 @@ var version = "v1.18.2";
               },
               isBonusTheme: true,
             },
+            geometrydash: {
+              id: "geometrydash",
+              name: "Geometry Dash",
+              colour: "#3485ff",
+              player: Wt.skins.gd,
+              background: "geometrydash",
+              objects: {
+                block: "geometrydash",
+                spike: "geometrydash",
+                platform: "geometrydash",
+                dirChange: "world1",
+                flag: "world1",
+                saw: "geometrydash",
+                bottom: "classic",
+                switch: "world3",
+                speedChange: "speed",
+              },
+              isBonusTheme: true,
+            },
             synthwave: ta,
             world1: Jt,
             red: Kt,
@@ -30791,6 +30810,8 @@ var version = "v1.18.2";
                 return ["images/themes/infinite/background/tile.png"];
               case "ice":
                 return ["images/themes/ice/background/SnowParallax.png"];
+              case "geometrydash":
+                return ["images/themes/geometrydash/background/BG.png"];
               case "red":
                 return [
                   "images/themes/red/background/background.png",
@@ -35347,7 +35368,7 @@ var version = "v1.18.2";
                               () => [
                                 y(
                                   {
-                                    fileName: `images/themes/${e.theme.includes("infinite") ? e.theme : e.orbTheme == "classic" ? "classic" : e.orbTheme == "stylemix" ? "classic" : "world1"}/doubleJump.png`,
+                                    fileName: `images/themes/${e.theme.includes("infinite") ? e.theme : e.orbTheme == "classic" ? "classic" : e.orbTheme == "stylemix" ? "classic" : e.orbTheme == "geometrydash" ? "classic" : "world1"}/doubleJump.png`,
                                     width: e.switchButton.width,
                                     height: e.switchButton.height,
                                   },
@@ -49897,6 +49918,7 @@ var version = "v1.18.2";
             e[(e.Virtual = 18)] = "Virtual";
             e[(e.StyleMix = 19)] = "StyleMix";
             e[(e.Ice = 20)] = "Ice";
+            e[(e.GeometryDash = 21)] = "GeometryDash";
           })(Od || (Od = {})),
           (function (e) {
             ((e[(e.Gun = 0)] = "Gun"),
@@ -50030,6 +50052,7 @@ var version = "v1.18.2";
             e[(e.Virtual = 18)] = "Virtual";
             e[(e.StyleMix = 19)] = "StyleMix";
             e[(e.Ice = 20)] = "Ice";
+            e[(e.GeometryDash = 21)] = "GeometryDash";
           })(xd || (xd = {})));
         const Bd = Gc([
             mc,
@@ -50906,6 +50929,7 @@ var version = "v1.18.2";
             [xd.Infinite]: "infinite",
             [xd.StyleMix]: "stylemix",
             [xd.Ice]: "ice",
+            [xd.GeometryDash]: "geometrydash",
             [xd.Virtual]: "virtual",
           },
           Vd = {
@@ -59271,6 +59295,49 @@ var version = "v1.18.2";
                              (t) => {
                                 ((t.playerX = 0.05 * e.cameraX),
                                 (t.playerY = 0));
+                              },
+                            ),
+                          ];
+                        case "geometrydash":
+                          return [
+                            Go.Single(
+                              {
+                                targetOpacity: 1,
+                                targetColor: e.bgColor || "#2785ff",
+                                sprite: (s, k) => [
+                                  p(
+                                    {
+                                      color: k.ref,
+                                      width: t.size.fullWidth,
+                                      height: t.size.fullHeight,
+                                      opacity: 1,
+                                    },
+                                    (j) => (
+                                      (j.width = t.size.fullWidth),
+                                      (j.height = t.size.fullHeight),
+                                      (j.color = k.ref),
+                                      (j.opacity = 1)
+                                    ),
+                                  ),
+                                ],
+                              },
+                              (t) => {
+                                t.targetOpacity = 1;
+                                t.targetColor = e.bgColor || "#2785ff";
+                              },
+                            ),
+                            dg.Single(
+                              {
+                                fileName:
+                                  "images/themes/geometrydash/background/BG.png",
+                                playerX: 0 * e.cameraX,
+                                playerY: 0 * e.cameraY,
+                                height: 718,
+                                y: 50,
+                              },
+                             (t) => {
+                                ((t.playerX = 0.05 * e.cameraX),
+                                (t.playerY = 0.05 * e.cameraY));
                               },
                             ),
                           ];

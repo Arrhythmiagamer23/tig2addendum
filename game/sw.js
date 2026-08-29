@@ -585,6 +585,7 @@ var version = "1.1.3",
     "miami-nights-1984-accelerated.mp3",
     "colbreakz-memories.mp3",
     "djvi-essence.mp3",
+    "mdk-snowdown-vip-mix.mp3",
 
     "nitro-fun-dragonfly.mp3",
     "panda-eyes-think-different.mp3",
