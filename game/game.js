@@ -46278,17 +46278,17 @@ var version = "v1.18.2";
                 bpm: 120,
                 fileName: "audio/tracks/creo-carnivores.mp3",
               },
-              memories: {
-                name: "Memories",
-                author: "Colbreakz",
-                bpm: 128,
-                fileName: "audio/tracks/colbreakz-memories.mp3",
-              },
               essence: {
                 name: "Essence",
                 author: "DJVI",
                 bpm: 170,
                 fileName: "audio/tracks/djvi-essence.mp3",
+              },
+              memories: {
+                name: "Memories",
+                author: "Colbreakz",
+                bpm: 128,
+                fileName: "audio/tracks/colbreakz-memories.mp3",
               },
               snowdown: {
                 name: "Snowdown (VIP Mix)",
@@ -46296,6 +46296,7 @@ var version = "v1.18.2";
                 bpm: 128,
                 fileName: "audio/tracks/mdk-snowdown.mp3",
               },
+            
             },
             getSnippetName: (e) => e.replace("audio/tracks", "audio/snippets"),
           },
@@ -49898,6 +49899,8 @@ var version = "v1.18.2";
             e[(e.GlitchedOut = 57)] = "GlitchedOut";
             e[(e.LastTile = 58)] = "LastTile";
             e[(e.Memories = 59)] = "Memories";
+            e[(e.Essence = 60)] = "Essence";
+            e[(e.Snowdown = 61)] = "Snowdown";
             // you know what? I'm not gonna put songs here. This variable (Rd) isn't even used anywhere.
           })(Rd || (Rd = {})),
           (function (e) {
@@ -50030,8 +50033,8 @@ var version = "v1.18.2";
             e[(e.MilkyWays = 67)] = "MilkyWays";
             e[(e.ParadiseOnE = 68)] = "ParadiseOnE";
             e[(e.Rattlesnake = 69)] = "Rattlesnake";
-            e[(e.Memories = 70)] = "Memories";
-            e[(e.Essence = 71)] = "Essence";
+            e[(e.Essence = 70)] = "Essence";
+            e[(e.Memories = 71)] = "Memories";
             e[(e.Snowdown = 72)] = "Snowdown";
           })(Nd || (Nd = {})),
           (function (e) {
@@ -51007,8 +51010,8 @@ var version = "v1.18.2";
             [Nd.MilkyWays]: hl.songs.milkyWays,
             [Nd.ParadiseOnE]: hl.songs.paradiseOnE,
             [Nd.Rattlesnake]: hl.songs.rattlesnake,
-            [Nd.Memories]: hl.songs.memories,
             [Nd.Essence]: hl.songs.essence,
+            [Nd.Memories]: hl.songs.memories,
             [Nd.Snowdown]: hl.songs.snowdown,
           },
           Hd = {
