@@ -35647,6 +35647,7 @@ var version = "v1.18.2";
           }),
           Po = makeSprite({
             render: ({ props: e }) => [
+              // real switch
               imageArray({
                 fileName: `images/themes/${e.theme}/switch-platform.png`,
                 props: (e) => ({ width: e.width, height: e.height }),
@@ -35660,18 +35661,14 @@ var version = "v1.18.2";
                       e.inGame && e.inGame.playerX,
                       e.inGame && e.inGame.fallTypes,
                       e.inGame && e.inGame.playerDir,
-                    )),
-                    (n.direction = t.direction));
-                  ((n.scale = {
-                    x: 1,
-                    y: n.direction == 0 || n.direction == 180 ? 1 : -1,
-                  }),
-                    (n.rotation =
-                      t.rotation + (void 0 !== n.editor ? t.direction : 0)));
+                    )));
+                    n.rotation =
+                      t.rotation;
                   n.scaleY = n.direction == 0 || n.direction == 180 ? -1 : 1;
                 },
                 array: () => e.switchPlatforms,
               }),
+              // editor only
               ifConditional(
                 () => void 0 !== e.editor,
                 () => [
@@ -35688,7 +35685,7 @@ var version = "v1.18.2";
                         (e.x = t.x + a),
                         (e.y = t.y),
                         (e.rotation =
-                          (0 === t.rotation ? -90 : 0) + t.direction));
+                          (0 === t.rotation - t.direction ? -90 : 0) + t.direction));
                     },
                     array: () => e.switchPlatforms,
                   }),
@@ -38101,6 +38098,11 @@ var version = "v1.18.2";
           },
           Tr = [],
           Rr = [],
+          setSwitchRotation = function (e) {
+            e.rotation = e.initPosition == "up" ? -90 : 0;
+            e.rotation += e.direction;
+            return e;
+          },
           objPropsMenu = function (e, t, a, i, debug) {
             switch (t.type) {
               case "spike":
@@ -39237,7 +39239,6 @@ var version = "v1.18.2";
                           },
                         },
                         {
-                          {
                           name: "Fan",
                           selected: t.kind === "fan",
                           onPress: () => {
@@ -40910,7 +40911,7 @@ var version = "v1.18.2";
                                 set: (e) =>
                                   Object.assign(Object.assign({}, e), {
                                     initPosition: "up",
-                                    rotation: -90,
+                                    rotation: -90 + t.direction,
                                   }),
                               });
                             });
@@ -40928,7 +40929,7 @@ var version = "v1.18.2";
                                 set: (e) =>
                                   Object.assign(Object.assign({}, e), {
                                     initPosition: "right",
-                                    rotation: 0,
+                                    rotation: 0 + t.direction,
                                   }),
                               });
                             });
@@ -40949,9 +40950,9 @@ var version = "v1.18.2";
                                 array: "switchPlatforms",
                                 index: j,
                                 set: (e) =>
-                                  Object.assign(Object.assign({}, e), {
+                                  setSwitchRotation(Object.assign(Object.assign({}, e), {
                                     direction: 0,
-                                  }),
+                                  }))
                               });
                             });
                           },
@@ -40966,9 +40967,9 @@ var version = "v1.18.2";
                                 array: "switchPlatforms",
                                 index: j,
                                 set: (e) =>
-                                  Object.assign(Object.assign({}, e), {
+                                  setSwitchRotation(Object.assign(Object.assign({}, e), {
                                     direction: 270,
-                                  }),
+                                  }))
                               });
                             });
                           },
@@ -40983,9 +40984,9 @@ var version = "v1.18.2";
                                 array: "switchPlatforms",
                                 index: j,
                                 set: (e) =>
-                                  Object.assign(Object.assign({}, e), {
+                                  setSwitchRotation(Object.assign(Object.assign({}, e), {
                                     direction: 180,
-                                  }),
+                                  }))
                               });
                             });
                           },
@@ -41000,9 +41001,9 @@ var version = "v1.18.2";
                                 array: "switchPlatforms",
                                 index: j,
                                 set: (e) =>
-                                  Object.assign(Object.assign({}, e), {
+                                  setSwitchRotation(Object.assign(Object.assign({}, e), {
                                     direction: 90,
-                                  }),
+                                  }))
                               });
                             });
                           },
@@ -43443,10 +43444,9 @@ var version = "v1.18.2";
                               family:
                                 e.theme == "classic" ? "Akashi" : e.theme == "infinite" ? "Poppins" : "Pusab",
                               size: 8,
-                              style: "italic",
                             },
                             text: localize("Pause"),
-                            rotation: -8,
+                            rotation: 0,
                             color: t ? Ae : Be,
                             strokeColor: Te,
                             strokeThickness: 2,
@@ -44150,7 +44150,6 @@ var version = "v1.18.2";
                   U.justHitObject = {
                     array: "switchButtons",
                     index: toggleGravity,
-                    L.landTimer = et.landTimerLimit;
                   };
                   U.isGravity = false;
                   U.dashing = false;
@@ -44885,6 +44884,7 @@ var version = "v1.18.2";
                   U.playerScaleY,
                   U.dashing ? 0 : U.playerRot,
                   skating,
+                  K,
                 )),
                 null == v || v.hitPortal()));
             const re = inViewLayout.powerups.findIndex((e, t) => {
@@ -78926,7 +78926,7 @@ var version = "v1.18.2";
               maxWidthMargin: 100,
               maxHeightMargin: 150,
             },
-            defaultFont: { family: "Montserrat", size: 10, weight: 900 },
+            defaultFont: { family: "Pusab", size: 10, weight: 900 },
             backgroundColor: Ue,
           },
           GE = window.onerror;
