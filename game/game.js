@@ -39237,6 +39237,7 @@ var version = "v1.18.2";
                           },
                         },
                         {
+                          {
                           name: "Fan",
                           selected: t.kind === "fan",
                           onPress: () => {
@@ -39247,8 +39248,8 @@ var version = "v1.18.2";
                                 index: j,
                                 set: (e, t) => springReplace(e, t, {
                                     kind: "fan",
-                                    height: 120,
                                     width: 90,
+                                    height: 120,
                                     snapSize: { offsetY: 0 }
                                   }),
                               });
@@ -44153,6 +44154,7 @@ var version = "v1.18.2";
                   };
                   U.isGravity = false;
                   U.dashing = false;
+                  L.landTimer = et.landTimerLimit;
                   if (g < 2) {
                     (g == 0
                       ? (U.dashing = true)
@@ -51462,7 +51464,7 @@ var version = "v1.18.2";
                   debug,
                   release,
                   animate,
-                  freeze,
+                  freeze
                 ],
                 d,
               ] = e;
@@ -65449,7 +65451,7 @@ var version = "v1.18.2";
                   f,
                   y,
                   E,
-                  d.fallTypes,
+                  d.fallTypes
                 ),
                 null === (o = t.didStart) ||
                   void 0 === o ||
