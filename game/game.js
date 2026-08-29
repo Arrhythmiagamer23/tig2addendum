@@ -78926,15 +78926,7 @@ var version = "v1.18.2";
               maxHeightMargin: 150,
             },
             defaultFont: { family: "Pusab", size: 10, weight: 900 },
-            //backgroundColor: Ue,
-            gradient: {
-              type: "linearVert",
-              colors: ["#0d0735", "#160091"],
-              height: 750,
-              height: 375,
-              maxWidthMargin: 100,
-              maxHeightMargin: 150,
-            },
+            backgroundColor: Ue,
           },
           GE = window.onerror;
         window.onerror = (e, t, a, i, n) => {
