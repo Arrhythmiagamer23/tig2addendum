@@ -46265,7 +46265,12 @@ var version = "v1.18.2";
                 author: "DJVI",
                 bpm: 170,
                 fileName: "audio/tracks/djvi-essence.mp3"
-
+              },
+              snowdownvip: {
+                name: "Snowdown (VIP Mix)",
+                author: "MDK",
+                bpm: 128,
+                fileName: "audio/tracks/mdk-snowdown-vip-mix.mp3"
               },
               
             },
@@ -50001,6 +50006,7 @@ var version = "v1.18.2";
             e[(e.Rattlesnake = 69)] = "Rattlesnake";
             e[(e.Memories = 70)] = "Memories";
             e[(e.Essence = 71)] = "Essence";
+            e[(e.SnowdownVip = 72)] = "SnowdownVip";
           })(Nd || (Nd = {})),
           (function (e) {
             ((e[(e.World1 = 0)] = "World1"),
@@ -50975,6 +50981,7 @@ var version = "v1.18.2";
             [Nd.Rattlesnake]: hl.songs.rattlesnake,
             [Nd.Memories]: hl.songs.memories,
             [Nd.Essence]: hl.songs.essence,
+            [Nd.SnowdownVip]: hl.songs.snowdownvip,
           },
           Hd = {
             [ld.Rot0]: 0,
