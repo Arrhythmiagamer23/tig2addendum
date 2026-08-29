@@ -17338,13 +17338,13 @@ var version = "v1.18.2";
             ],
           }),
           ve = "#F9F7FE",
-          Te = "#FDDF40",
-          Re = "#06F195",
+          Te = "#39eafd",
+          Re = "#0af167",
           Oe = "#b0fa37",
           Ce = "#00DE84",
           we = "#4CF47D",
           Ae = "#5143FF",
-          ke = "#06FFFE",
+          ke = "#ee70a6",
           Ne = "#82FCFD",
           xe = "#59C2F9",
           Pe = "#A7C2F6",
@@ -17354,7 +17354,7 @@ var version = "v1.18.2";
           Be = "#550199",
           Fe = "#5710A1",
           Ye = "#A93FFF",
-          Ue = "#2F0245",
+          Ue = "#0d0735",
           je = "#CE92FF",
           Ge = "#C464F7",
           Ve = "#ED5B29",
@@ -17448,7 +17448,7 @@ var version = "v1.18.2";
                 height: a,
                 onPress: i,
                 disabled: s,
-                colour: o = "#06F195",
+                colour: o = "#0af167",
               },
               device: r,
             }) {
@@ -17802,18 +17802,16 @@ var version = "v1.18.2";
             trail: ct({ topColour: "#E51C04", bottomColour: "#820F1B" }),
           },
           Ht = {
-            name: "Tester",
+            name: "Tester's Hat (For You)",
             fileName: "tester",
             size: 66,
             trail: ct({ topColour: "#FFF142", bottomColour: "#C57700" }),
-            hidden: true,
           },
           Xt = {
-            name: "Dev",
+            name: "Developer's Hat (From FlukeDude)",
             fileName: "dev",
             size: 47,
             trail: ct(),
-            hidden: true,
           },
           zt = {
             default: dt,
@@ -17824,10 +17822,10 @@ var version = "v1.18.2";
               trail: ct(),
             },
             yellow: {
-              name: "Default Yellow",
+              name: "Default Yellow (No Infinite color Change)",
               fileName: "yellow",
               size: 31,
-              trail: ct({ topColour: "#fdef64", bottomColour: "#fdef64" })
+              trail: ct(),
             },
             orange: {
               name: "Default Orange",
@@ -35956,7 +35954,7 @@ var version = "v1.18.2";
             }) => {
               let textLength = cy.measureTexts(
                 [localize(e)], 
-                { family: "Montserrat", size: fontSize, weight: 900 })[0],
+                { family: "Pusab", size: fontSize, weight: 900 })[0],
               menuHeight = Math.abs((-nr * i - 20) * (options.length + 1)) + nr,
               menuOffset = menuHeight / 2 + a / 2;
               return [
@@ -42684,7 +42682,7 @@ var version = "v1.18.2";
                     parentOffset: parentOffset,
                   }),
                   n({
-                    text: `${localize("LOADING")}...`,
+                    text: `${localize("Loading")}...`,
                     font: { size: 15 },
                     color: ve,
                     scaleX: 1 / parentOffset.scale,
@@ -43442,11 +43440,11 @@ var version = "v1.18.2";
                         : c({
                             font: {
                               family:
-                                e.theme == "classic" ? "Akashi" : "Montserrat",
+                                e.theme == "classic" ? "Akashi" : e.theme == "infinite" ? "Poppins" : "Pusab",
                               size: 8,
                               style: "italic",
                             },
-                            text: localize("MENU"),
+                            text: localize("Pause"),
                             rotation: -8,
                             color: t ? Ae : Be,
                             strokeColor: Te,
@@ -43511,7 +43509,7 @@ var version = "v1.18.2";
                           width: 50,
                           height: 50,
                           onPress: e.onPress,
-                          text: localize("MENU"),
+                          text: localize("Pause"),
                         }),
                       ],
               ),
@@ -62633,12 +62631,12 @@ var version = "v1.18.2";
                         ),
                         c(
                           {
-                            text: localize("ATTEMPT"),
+                            text: localize("Attempt"),
                             color: "white",
-                            font: { family: "Montserrat", size: 15 },
+                            font: { family: "Pusab", size: 15 },
                             y: e.size.fullHeight / 2 - 50,
-                            strokeColor: He,
-                            strokeThickness: 4,
+                            strokeColor: vez,
+                            strokeThickness: 2,
                           },
                           (t) => {
                             t.y = e.size.fullHeight / 2 - 50;
@@ -62647,10 +62645,10 @@ var version = "v1.18.2";
                         c(
                           {
                             color: "white",
-                            font: { family: "Montserrat", size: 20 },
+                            font: { family: "Pusab", size: 20 },
                             y: e.size.fullHeight / 2 - 70,
-                            strokeColor: He,
-                            strokeThickness: 4,
+                            strokeColor: vez,
+                            strokeThickness: 2,
                           },
                           (a) => {
                             ((a.text = String(t.attempt)),
@@ -62848,7 +62846,7 @@ var version = "v1.18.2";
                 ...("loading" === e.purchases
                   ? [
                       n({
-                        text: `${localize("LOADING")}...`,
+                        text: `${localize("Loading")}...`,
                         color: ve,
                         strokeColor: Ye,
                         strokeThickness: 3,
@@ -62978,7 +62976,7 @@ var version = "v1.18.2";
                 () => "loading" === e.purchases,
                 () => [
                   c({
-                    text: `${localize("LOADING")}...`,
+                    text: `${localize("Loading")}...`,
                     color: ve,
                     strokeColor: Ye,
                     strokeThickness: 3,
@@ -63102,7 +63100,7 @@ var version = "v1.18.2";
               return [
                 Fo({
                   id: "GoOnline",
-                  text: i.didRequest ? "LOADING" : "GO ONLINE",
+                  text: i.didRequest ? "Loading" : "GO ONLINE",
                   width: 120,
                   height: 40,
                   onPress: () =>
@@ -63131,7 +63129,7 @@ var version = "v1.18.2";
               return [
                 Yo.Single(
                   {
-                    text: a.didRequest ? "LOADING" : "GO ONLINE",
+                    text: a.didRequest ? "Loading" : "GO ONLINE",
                     width: 120,
                     height: 40,
                     onPress: () =>
@@ -63146,7 +63144,7 @@ var version = "v1.18.2";
                       }),
                   },
                   (e) => {
-                    e.text = a.didRequest ? "LOADING" : "GO ONLINE";
+                    e.text = a.didRequest ? "Loading" : "GO ONLINE";
                   },
                 ),
               ];
@@ -64202,9 +64200,11 @@ var version = "v1.18.2";
                       () => e.fadeOutAttempts,
                       () => [
                         c({
-                          text: `${localize("ATTEMPT")} ${e.attempt}`,
+                          text: `${localize("Attempt")} ${e.attempt}`,
                           font: { size: 15 },
                           color: ve,
+                          strokeColor: vez,
+                          strokeThickness: 2,
                           x: 0,
                           y: -a.size.fullHeight * 0.45,
                         }),
@@ -64363,7 +64363,7 @@ var version = "v1.18.2";
                 () => "loading" === t.view.type,
                 () => [
                   c({
-                    text: `${localize("LOADING")}...`,
+                    text: `${localize("Loading")}...`,
                     color: ve,
                     strokeColor: Ye,
                     strokeThickness: 3,
@@ -64766,7 +64766,7 @@ var version = "v1.18.2";
                       () => "loading" === t.items,
                       () => [
                         c({
-                          text: `${localize("LOADING")}...`,
+                          text: `${localize("Loading")}...`,
                           font: { size: 20 },
                           color: Ye,
                         }),
@@ -65248,12 +65248,12 @@ var version = "v1.18.2";
                 font: { size: 15 },
                 text: `${localize(
                   "PREVIOUS BEST",
-                )}: ${t.toLocaleString()} ${localize("ATTEMPT")}${
+                )}: ${t.toLocaleString()} ${localize("Attempt")}${
                   1 === t ? "" : "S"
                 }`,
                 color: ve,
-                strokeColor: Ye,
-                strokeThickness: 4,
+                strokeColor: vez,
+                strokeThickness: 2,
                 y: -25,
               }),
             ],
@@ -66881,7 +66881,7 @@ var version = "v1.18.2";
                 }),
                 P({
                   id: "NameInput",
-                  fontName: "Montserrat",
+                  fontName: "Pusab",
                   fontSize: 15,
                   text: e,
                   onChangeText: t,
@@ -67101,7 +67101,7 @@ var version = "v1.18.2";
                   ...("loading" === t.unlockedFeatures.type
                     ? [
                         n({
-                          text: `${localize("LOADING")}...`,
+                          text: `${localize("Loading")}...`,
                           color: ve,
                           font: { size: 15 },
                         }),
@@ -67788,7 +67788,7 @@ var version = "v1.18.2";
               !t.level || "then" in t.animationAssets
                 ? [
                     n({
-                      text: `${localize("LOADING")}...`,
+                      text: `${localize("Loading")}...`,
                       font: { size: 15 },
                       color: ve,
                     }),
@@ -68130,11 +68130,13 @@ var version = "v1.18.2";
                   : null,
                 h && s.bestAttempts
                   ? n({
-                      text: `${localize("PREVIOUS BEST")}: ${s.bestAttempts.toLocaleString()} ${localize("ATTEMPT")}${
+                      text: `${localize("PREVIOUS BEST")}: ${s.bestAttempts.toLocaleString()} ${localize("Attempt")}${
                         1 === s.bestAttempts ? "" : "S"
                       }`,
                       font: { size: 10, weight: 500, style: "italic" },
                       color: Ye,
+                      strokeColor: vez,
+                      strokeThickness: 2,
                       x: -60,
                       y: -120 + offset,
                     })
@@ -68593,7 +68595,7 @@ var version = "v1.18.2";
                 ...("loading" === s
                   ? [
                       n({
-                        text: `${localize("LOADING")}...`,
+                        text: `${localize("Loading")}...`,
                         font: { size: 20 },
                         color: Ye,
                         x: -50,
@@ -68717,7 +68719,7 @@ var version = "v1.18.2";
                 return [
                   ...r,
                   n({
-                    text: `${localize("LOADING")}...`,
+                    text: `${localize("Loading")}...`,
                     color: ve,
                     font: { size: 15 },
                   }),
@@ -69075,7 +69077,7 @@ var version = "v1.18.2";
               if (t.isLoading)
                 return [
                   n({
-                    text: `${localize("LOADING")}...`,
+                    text: `${localize("Loading")}...`,
                     color: ve,
                     font: { size: 15 },
                   }),
@@ -69491,7 +69493,7 @@ var version = "v1.18.2";
               if (!t || !r.songLoaded)
                 return [
                   n({
-                    text: `${localize("LOADING")}...`,
+                    text: `${localize("Loading")}...`,
                     font: { size: 15 },
                     color: ve,
                   }),
@@ -69639,7 +69641,7 @@ var version = "v1.18.2";
             
             return [
               state.loading ? n({
-                  text: `${localize("LOADING")}...`,
+                  text: `${localize("Loading")}...`,
                   color: ve,
                   font: { size: 15 },
                 }) : ScrollContainer({
@@ -69787,7 +69789,7 @@ var version = "v1.18.2";
             if ("loading" === t.data)
               return [
                 n({
-                  text: `${localize("LOADING")}...`,
+                  text: `${localize("Loading")}...`,
                   color: ve,
                   font: { size: 15 },
                 }),
@@ -70514,7 +70516,7 @@ var version = "v1.18.2";
                 }),
                 t.loading
                   ? n({
-                      text: `${localize("LOADING")}...`,
+                      text: `${localize("Loading")}...`,
                       color: ve,
                       font: { size: 13 },
                       y: -o / 2 + 40,
@@ -70676,7 +70678,7 @@ var version = "v1.18.2";
                 c = r ? 110 : 70,
                 d = cy.measureTexts(
                   o.map((e) => e.playerName),
-                  { family: "Montserrat", size: 10, weight: 600 },
+                  { family: "Pusab", size: 10, weight: 600 },
                 ),
                 u = t - 45;
               return [
@@ -70908,7 +70910,7 @@ var version = "v1.18.2";
                 }),
                 P({
                   id: "Username",
-                  fontName: "Montserrat",
+                  fontName: "Pusab",
                   fontSize: 15,
                   text: r,
                   onChangeText: (e) => {
@@ -71168,7 +71170,7 @@ var version = "v1.18.2";
                       ]
                     : []),
                   "loading" === o
-                    ? n({ text: `${localize("LOADING")}...`, color: Be })
+                    ? n({ text: `${localize("Loading")}...`, color: Be })
                     : ScrollContainer({
                         id: "ScrollContainer",
                         containerWidth: l,
@@ -71632,7 +71634,7 @@ var version = "v1.18.2";
                 }),
                 P({
                   id: "SearchField",
-                  fontName: "Montserrat",
+                  fontName: "Pusab",
                   fontSize: 12,
                   text: d,
                   onChangeText: (e) => {
@@ -71688,7 +71690,7 @@ var version = "v1.18.2";
                   },
                 }),
                 "loading" === u
-                  ? n({ color: Be, text: `${localize("LOADING")}...` })
+                  ? n({ color: Be, text: `${localize("Loading")}...` })
                   : null === u
                     ? null
                     : u instanceof Error
@@ -71959,7 +71961,7 @@ var version = "v1.18.2";
                               : "THE ACHIEVEMENT PASS"
                           }: ${n.name.toLocaleUpperCase()}`
                         : `${n.name.toLocaleUpperCase()} TO UNLOCK`,
-                      { family: "Montserrat", size: 10, weight: 800 },
+                      { family: "Pusab", size: 10, weight: 800 },
                       120,
                     );
                     return { skin: t, unlockText: [""] }; // s };
@@ -71987,7 +71989,7 @@ var version = "v1.18.2";
               getContext: d,
             }) {
               if ("loading" === allSkinItems)
-                return [n({ text: `${localize("LOADING")}...`, color: Be })];
+                return [n({ text: `${localize("Loading")}...`, color: Be })];
               const u = 0.6 * e,
                 h = 0.2 * -e;
               return [
@@ -72344,7 +72346,7 @@ var version = "v1.18.2";
                   We({ color: ve, width: e, height: I, y: _ }),
                 ];
               return "loading" === l.type
-                ? [...v, n({ text: `${localize("LOADING")}...`, color: Be })]
+                ? [...v, n({ text: `${localize("Loading")}...`, color: Be })]
                 : "play" === E
                   ? [
                       ...v,
@@ -73383,7 +73385,7 @@ var version = "v1.18.2";
                 ...("loading" === s
                   ? [
                       n({
-                        text: `${localize("LOADING")}...`,
+                        text: `${localize("Loading")}...`,
                         font: { size: 20 },
                         color: Ye,
                         x: -50,
@@ -73582,7 +73584,7 @@ var version = "v1.18.2";
                 ? [
                     ...g,
                     n({
-                      text: `${localize("LOADING")}...`,
+                      text: `${localize("Loading")}...`,
                       color: ve,
                       font: { size: 15 },
                     }),
@@ -73687,12 +73689,12 @@ var version = "v1.18.2";
               collected: e.achievement.rewards.collected,
               rewards: jy(
                 e.achievement,
-                { family: "Montserrat", size: 10, weight: 800 },
+                { family: "Pusab", size: 10, weight: 800 },
                 90,
               ),
               nameLines: cy.splitTextIntoLines(
                 e.achievement.name.toLocaleUpperCase(),
-                { family: "Montserrat", size: 14, weight: 800 },
+                { family: "Pusab", size: 14, weight: 800 },
                 220,
               ),
             }),
@@ -73805,7 +73807,7 @@ var version = "v1.18.2";
                     ? n({
                         text:
                           "loading" === i
-                            ? `${localize("LOADING")}...`
+                            ? `${localize("Loading")}...`
                             : localize("COLLECTED!"),
                         color: Ye,
                         font: { size: 16 },
@@ -74090,7 +74092,7 @@ var version = "v1.18.2";
                   ["JAMES MCGREGOR", "ELLIOT BENTLEY", "ANASTASIYA LEE"],
                 ],
                 void 0,
-                ["MENU MUSIC", ["MONSTAZ. - POPCORN FUNK"]],
+                ["MENU MUSIC", ["Infraction Music - Radio Feelings"]],
                 [
                   "LEVEL MUSIC BY",
                   [
@@ -74538,7 +74540,7 @@ var version = "v1.18.2";
                 return [
                   ...u,
                   n({
-                    text: `${localize("LOADING")}...`,
+                    text: `${localize("Loading")}...`,
                     color: ve,
                     font: { size: 15 },
                   }),
@@ -74701,7 +74703,7 @@ var version = "v1.18.2";
             }) {
               const s =
                   ("credits" === i.view.type && i.view.endOfGame),
-                o = `audio/tracks/monstaz-popcorn-funk${
+                o = `audio/tracks/infractionmusic-radiofeelings${
                   s ? "-credits" : ""
                 }.mp3`;
               return (
@@ -74709,7 +74711,7 @@ var version = "v1.18.2";
                   imageFileNames: Qs.mainMenuImages,
                   audioFileNames: [
                     ...Qs.mainMenuAudio,
-                    "audio/tracks/monstaz-popcorn-funk-credits.mp3",
+                    "audio/tracks/infractionmusic-radiofeelings-credits.mp3",
                     o,
                   ],
                 }).then(() => {
@@ -74774,7 +74776,7 @@ var version = "v1.18.2";
               if (t.loading)
                 return [
                   n({
-                    text: localize(`${localize("LOADING")}...`),
+                    text: localize(`${localize("Loading")}...`),
                     font: { size: 15 },
                     color: ve,
                   }),
@@ -77079,7 +77081,7 @@ var version = "v1.18.2";
                         e.text =
                           "connecting" === t.connection
                             ? "CONNECTING TO GAME..."
-                            : `${localize("LOADING")}...`;
+                            : `${localize("Loading")}...`;
                       }),
                     ],
                     () => {
@@ -78331,7 +78333,7 @@ var version = "v1.18.2";
             init({ props: e, device: t, preloadFiles: a, updateState: i }) {
               const n = jy(
                 e.achievement,
-                { family: "Montserrat", size: 16, weight: 800 },
+                { family: "Pusab", size: 16, weight: 800 },
                 120,
               );
               return (
@@ -78470,7 +78472,7 @@ var version = "v1.18.2";
                             ? n({
                                 text:
                                   "loading" === f
-                                    ? localize("LOADING")
+                                    ? localize("Loading")
                                     : localize("COLLECTED!"),
                                 color: Ye,
                                 font: { size: 16 },
@@ -78743,7 +78745,7 @@ var version = "v1.18.2";
                 () => !t.level || "then" in t.spineContext,
                 () => [
                   c({
-                    text: `${localize("LOADING")}...`,
+                    text: `${localize("Loading")}...`,
                     font: { size: 15 },
                     color: ve,
                   }),
@@ -78823,7 +78825,7 @@ var version = "v1.18.2";
                 () => "then" in t.spineContext,
                 () => [
                   c({
-                    text: `${localize("LOADING")}...`,
+                    text: `${localize("Loading")}...`,
                     font: { size: 15 },
                     color: ve,
                   }),
@@ -78923,8 +78925,16 @@ var version = "v1.18.2";
               maxWidthMargin: 100,
               maxHeightMargin: 150,
             },
-            defaultFont: { family: "Montserrat", size: 10, weight: 900 },
-            backgroundColor: Ue,
+            defaultFont: { family: "Pusab", size: 10, weight: 900 },
+            //backgroundColor: Ue,
+            gradient: {
+              type: "linearVert",
+              colors: ["#0d0735", "#160091"],
+              height: 750,
+              height: 375,
+              maxWidthMargin: 100,
+              maxHeightMargin: 150,
+            },
           },
           GE = window.onerror;
         window.onerror = (e, t, a, i, n) => {
@@ -79293,7 +79303,7 @@ var version = "v1.18.2";
                       }),
                     )
                   : n({
-                      text: `${localize("LOADING")}...`,
+                      text: `${localize("Loading")}...`,
                       font: { size: 15 },
                       color: ve,
                     }),
@@ -79746,7 +79756,7 @@ var version = "v1.18.2";
             }
             const r = [
               n({
-                text: `${localize("LOADING")}...`,
+                text: `${localize("Loading")}...`,
                 font: { size: 15 },
                 color: ve,
               }),
