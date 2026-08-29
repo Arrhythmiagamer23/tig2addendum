@@ -44008,7 +44008,7 @@ var version = "v1.18.2";
                     inViewLayoutState,
                     fullLayoutStateIndexes,
                     e.fallTypes,
-                    e.crashed || e.finishedLevel,
+                    e.crashed || e.finishedLevel
                   ),
                   (e.attempt = U.attempt + 1),
                   (useCheckpointState || (e.checkpoint = {
@@ -44883,7 +44883,6 @@ var version = "v1.18.2";
                   U.playerScaleY,
                   U.dashing ? 0 : U.playerRot,
                   skating,
-                  U.switchBlockSpikes,
                 )),
                 null == v || v.hitPortal()));
             const re = inViewLayout.powerups.findIndex((e, t) => {
@@ -45143,7 +45142,7 @@ var version = "v1.18.2";
                   U.playerScaleY,
                   U.dashing ? 0 : U.playerRot,
                   skating,
-                  K,
+                  U.switchBlockSpikes,
                 );
                 for (let e = 0; e < ue.length; e++) {
                   const { object: t } = ue[e];
@@ -65847,7 +65846,7 @@ var version = "v1.18.2";
                   onCrash: t.onCrash,
                   onReset: t.onReset,
                   disableReleaseBuffer: y.disableReleaseBuffer,
-                  freezeOnDeath: y.freezeOnDeath,
+                  freezeOnDeath: y.freezeOnDeath
                 }),
                 oldPowerupsLength -
                   t.mutValues.levelState.playerPowerups.filter(
