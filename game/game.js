@@ -78926,7 +78926,7 @@ var version = "v1.18.2";
               maxWidthMargin: 100,
               maxHeightMargin: 150,
             },
-            defaultFont: { family: "Pusab", size: 10, weight: 900 },
+            defaultFont: { family: "Montserrat", size: 10, weight: 900 },
             backgroundColor: Ue,
           },
           GE = window.onerror;
