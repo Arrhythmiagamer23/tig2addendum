@@ -18081,6 +18081,41 @@ var version = "v1.18.2";
               author: "KDSGeoDash",
               trail: ct({ topColour: "#ff0000", bottomColour: "#ffffff" })
             },
+            mathicreator: {
+              name: "MathisCreator",
+              fileName: "mathicreator",
+              size: 34,
+              author: "KDSGeoDash",
+              trail: ct({ topColour: "#7d00ff", bottomColour: "#00ffff" })
+            },
+            subwoofer: {
+              name: "Subwoofer",
+              fileName: "subwoofer",
+              size: 33,
+              author: "KDSGeoDash",
+              trail: ct({ topColour: "#00c8ff", bottomColour: "#ff3a3a" })
+            },
+            switchstep: {
+              name: "SwitchStepGD",
+              fileName: "switchstep",
+              size: 33,
+              author: "KDSGeoDash",
+              trail: ct({ topColour: "#5a5a5a", bottomColour: "#ff0000" })
+            },
+            andrexel: {
+              name: "Andrexel",
+              fileName: "andrexel",
+              size: 33,
+              author: "KDSGeoDash",
+              trail: ct({ topColour: "#ff007d", bottomColour: "#ffff00" })
+            },
+            waterfire: {
+              name: "WaterFire",
+              fileName: "waterfire",
+              size: 33,
+              author: "KDSGeoDash",
+              trail: ct({ topColour: "#ff7d00", bottomColour: "#00ffff" })
+            },
             blank: {
               name: "Blank",
               fileName: "blank",
@@ -31409,6 +31444,7 @@ var version = "v1.18.2";
               "audio/levels/speedChange/down3.wav",
               "audio/levels/speedChange/down4.wav",
               "audio/levels/speedChange/down5.wav",
+              "audio/levels/orbTouch.mp3",
             ],
             levelImages: [
               "images/themes/infinite/attempt.png",
