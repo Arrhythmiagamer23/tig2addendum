@@ -31185,6 +31185,7 @@ var version = "v1.18.2";
                     `images/themes/${e.objects.bottom}/bottom/block-spike.png`,
                     `images/themes/${e.objects.bottom}/bottom/block.png`,
                     `images/themes/world1Boss/bottom/block.png`,
+                    `images/themes/ice/bottom/block.png`,
                     `images/themes/skater/bottom/block.png`,
 
                     `images/themes/${e.objects.bottom}/bottom/double-tall-block-spike.png`,
