@@ -3,7 +3,7 @@ var game;
 var bgOnly = false,
   showcaseOnly = false;
 
-var version = "v1.18.2";
+var version = "v1.19.2";
 (() => {
   var e = {
       8465: (e, t, a) => {
@@ -18116,6 +18116,34 @@ var version = "v1.18.2";
               author: "KDSGeoDash",
               trail: ct({ topColour: "#ff7d00", bottomColour: "#00ffff" })
             },
+            getmadz: {
+              name: "GetMadz",
+              fileName: "getmadz",
+              size: 67,
+              author: "GetMadz",
+              trail: ct({ topColour: "#e90d74", bottomColour: "#ffffff" })
+            },
+            friend: {
+              name: "FRIEND (INSIDE ME)",
+              fileName: "friend",
+              size: 67,
+              author: "Asterveila & Gaster",
+              trail: ct({ topColour: "#e04abb", bottomColour: "#f0cd0b" })
+            },
+            aqua: {
+              name: "Aqua",
+              fileName: "aqua",
+              size: 67,
+              author: "AsRenCL & J3anC4rlo",
+              trail: ct({ topColour: "#4adbe0", bottomColour: "#0bcef0" })
+            },
+            incognito: {
+              name: "Incognito",
+              fileName: "incognito",
+              size: 67,
+              author: "Rocky105",
+              trail: ct({ topColour: "#6e5202", bottomColour: "#222324" })
+            },
             blank: {
               name: "Blank",
               fileName: "blank",
@@ -18609,7 +18637,7 @@ var version = "v1.18.2";
                 !willApplyMovement(a.x, a.y, playerX, playerY, fallTypes)
               )
                 return null;
-              const i = "beat" === a.movementTrigger ? _a(frame, maxBeat) : "switch" === a.movementTrigger ? switchTrig : 90 * jump,
+              const i = "beat" === a.movementTrigger ? frame : "switch" === a.movementTrigger ? switchTrig : 90 * jump,
                 o = "up" === a.initPosition ? -90 + i : 0 - i;
               return "switchPlatform" ===
                 (null == updated ? void 0 : updated.type)
@@ -74577,6 +74605,16 @@ var version = "v1.18.2";
                   },
                   y: s - 150,
                 }),
+                Fo({
+                  id: "discord",
+                  width: 200,
+                  height: 40,
+                  text: localize("JOIN THE DISCORD!"),
+                  onPress: () => {
+                    zu.openLink("https://discord.gg/5AdyAHUXHy");
+                  },
+                  y: s - 200,
+                }),
 
                 /*Fo({
                   id: "TC",
@@ -74611,7 +74649,7 @@ var version = "v1.18.2";
                     }
                     a.storage.setItem("lang", LANG);
                   },
-                  y: s - 200,
+                  y: s - 250,
                 }),
                 Fo({
                   id: "deleteRunHistory",
@@ -74627,7 +74665,7 @@ var version = "v1.18.2";
                      a.storage.setItem("savedLevelsSettings");
                     }
                   },
-                  y: s - 250,
+                  y: s - 300,
                 }),
                 Fo({
                   id: "userlevels",
@@ -74637,11 +74675,11 @@ var version = "v1.18.2";
                   onPress: () => {
                     zu.openLink("https://userlevels.com");
                   },
-                  y: s - 300,
+                  y: s - 350,
                 }),
                 Fo({
                   id: "BackButton",
-                  text: localize("BACK"),
+                  text: localize("Back"),
                   width: 80,
                   height: 40,
                   onPress: t,
