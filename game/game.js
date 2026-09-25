@@ -49882,9 +49882,9 @@ var version = "v1.19.2";
             ((e[(e.Up = 0)] = "Up"), (e[(e.Right = 1)] = "Right"));
           })(yd || (yd = {})),
           (function (e) {
-            ((e[(e.Beat = 0)] = "Beat"),
-              (e[(e.Jump = 1)] = "Jump"),
-              (e[(e.Switch = 2)] = "Switch"));
+            ((e[(e.Beat = 2)] = "Beat"),
+              (e[(e.Jump = 0)] = "Jump"),
+              (e[(e.Switch = 1)] = "Switch"));
           })(Ed || (Ed = {})),
           (function (e) {
             ((e[(e.A = 0)] = "A"), (e[(e.B = 1)] = "B"));
@@ -51168,7 +51168,7 @@ var version = "v1.19.2";
           },
           tu = { [kd.Left]: "left", [kd.Right]: "right" },
           au = { [yd.Up]: "up", [yd.Right]: "right" },
-          iu = { [Ed.Beat]: "beat", [Ed.Switch]: "switch", [Ed.Jump]: "jump", [Ed.Switch]: "switch" },
+          iu = { [Ed.Beat]: "beat", [Ed.Switch]: "switch", [Ed.Jump]: "jump" },
           nu = { [bd.A]: "a", [bd.B]: "b" },
           su = { [Ad.Coin]: "coin", [Ad.Arrows]: "arrow" },
           ou = { [sd.True]: true, [sd.False]: false };
