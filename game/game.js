@@ -3,7 +3,7 @@ var game;
 var bgOnly = false,
   showcaseOnly = false;
 
-var version = "v1.20.0";
+var version = "v1.20.1";
 (() => {
   var e = {
       8465: (e, t, a) => {
@@ -51902,7 +51902,6 @@ var version = "v1.20.0";
                 e.settings.fadeOutAttempts || false,
                 e.settings.hidePlayerGlow || false,
                 e.settings.flyingTrail || false,
-                e.settings.classicTrail || false,
                 e.settings.showDebug || false,
                 e.settings.disableReleaseBuffer || false,
                 e.settings.animateEditor || false,
