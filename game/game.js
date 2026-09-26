@@ -18488,6 +18488,25 @@ var version = "v1.20.1";
             },
             synthwave: ta,
             world1: Jt,
+            world1light: {
+              id: "world1light",
+              name: "World 1 Light",
+              colour: "#73f3cd",
+              player: Wt.skins.default,
+              background: "world1light",
+              objects: {
+                block: "world1",
+                spike: "world1",
+                platform: "world1",
+                dirChange: "world1",
+                flag: "world1",
+                saw: "world1",
+                bottom: "world1",
+                switch: "world3",
+                speedChange: "speed",
+              },
+              isBonusTheme: true,
+            },
             red: Kt,
             world1Boss: Qt,
             world2: qt,
@@ -30882,6 +30901,10 @@ var version = "v1.20.1";
                   "images/themes/red/background/background-red-flame1.png",
                   "images/themes/red/background/background-red-flame2.png",
                 ];
+              case "world1light":
+                return [
+                  "images/themes/world1/background/light/LightBG.png",
+                ];
               case "world3":
               case "virtual":
               case "world3Red":
@@ -31170,8 +31193,8 @@ var version = "v1.20.1";
               "images/themes/classic/doubleJump.png",
               "images/themes/infinite/doubleJump.png",
               "images/themes/world2/double-jump.png",
-              `images/themes/${e.objects.spike == "classic" ? "classic" : e.objects.spike == "infinite" ? "infinite" : e.objects.spike == "world3" ? "world3" : "world1"}/saw-big.png`,
-              `images/themes/${e.objects.spike == "classic" ? "classic" : e.objects.spike == "infinite" ? "infinite" : e.objects.spike == "world3" ? "world3" : "world1"}/saw-medium.png`,
+              `images/themes/${e.objects.spike == "classic" ? "classic" : e.objects.spike == "infinite" ? "infinite" : e.objects.spike == "world3" ? "world3" : e.objects.spike == "geometrydash" ? "geometrydash" : "world1"}/saw-big.png`,
+              `images/themes/${e.objects.spike == "classic" ? "classic" : e.objects.spike == "infinite" ? "infinite" : e.objects.spike == "world3" ? "world3" : e.objects.spike == "geometrydash" ? "geometrydash" : "world1"}/saw-medium.png`,
               `images/themes/${e.objects.saw == "classic" ? "classic" : "infinite"}/saw-bar.png`,
               "images/themes/world1/red.png",
               "images/themes/world1/red-spike.png",
@@ -47763,15 +47786,14 @@ var version = "v1.20.1";
               ],
               maxFrames: 8762,
               difficulty: 3,
-              comingSoon: true,
             },
             {
               levelName: "Solar Wind",
               levelFileName: "solar-wind",
               song: hl.songs.solarWind,
               unlockedByIndex: 0,
-              x: -100,
-              y: 70,
+              x: 12,
+              y: 5,
               pathToLevel: [
                 [-220, 10],
                 [-130, 60],
@@ -47815,8 +47837,8 @@ var version = "v1.20.1";
               song: hl.songs.solarAbyss,
 
               unlockedByIndex: 2,
-              x: 150,
-              y: 100,
+              x: 223,
+              y: 108,
               pathToLevel: [
                 [120, 10],
                 [140, 45],
@@ -47830,7 +47852,7 @@ var version = "v1.20.1";
               song: hl.songs.indestructable,
               unlockedByIndex: null, //2,
               x: 250,
-              y: 20,
+              y: -10,
               pathToLevel: [
                 [150, -20],
                 [220, 20],
@@ -49952,7 +49974,8 @@ var version = "v1.20.1";
               (e[(e.Skater = 11)] = "Skater"),
               (e[(e.StyleMix = 12)] = "StyleMix"),
               (e[(e.Ice = 13)] = "Ice"),
-              (e[(e.GeometryDash = 14)] = "GeometryDash"));
+              (e[(e.GeometryDash = 14)] = "GeometryDash"),
+              (e[(e.World1Light = 15)] = "World1Light"));
           })(rd || (rd = {})),
           (function (e) {
             ((e[(e.Rot0 = 0)] = "Rot0"),
@@ -50139,6 +50162,7 @@ var version = "v1.20.1";
             e[(e.StyleMix = 19)] = "StyleMix";
             e[(e.Ice = 20)] = "Ice";
             e[(e.GeometryDash = 21)] = "GeometryDash";
+            e[(e.World1Light = 22)] = "World1Light";
           })(Od || (Od = {})),
           (function (e) {
             ((e[(e.Gun = 0)] = "Gun"),
@@ -50273,6 +50297,7 @@ var version = "v1.20.1";
             e[(e.StyleMix = 19)] = "StyleMix";
             e[(e.Ice = 20)] = "Ice";
             e[(e.GeometryDash = 21)] = "GeometryDash";
+            e[(e.World1Light = 22)] = "World1Light";
           })(xd || (xd = {})));
         const Bd = Gc([
             mc,
@@ -51150,6 +51175,7 @@ var version = "v1.20.1";
             [xd.StyleMix]: "stylemix",
             [xd.Ice]: "ice",
             [xd.GeometryDash]: "geometrydash",
+            [xd.World1Light]: "world1light",
             [xd.Virtual]: "virtual",
           },
           Vd = {
@@ -59563,6 +59589,49 @@ var version = "v1.20.1";
                              (t) => {
                                 ((t.playerX = 0.05 * e.cameraX),
                                 (t.playerY = 0.05 * e.cameraY));
+                              },
+                            ),
+                          ];
+                        case "world1light":
+                          return [
+                            Go.Single(
+                              {
+                                targetOpacity: 1,
+                                targetColor: e.bgColor || "#73f3cd",
+                                sprite: (s, k) => [
+                                  p(
+                                    {
+                                      color: k.ref,
+                                      width: t.size.fullWidth,
+                                      height: t.size.fullHeight,
+                                      opacity: 1,
+                                    },
+                                    (j) => (
+                                      (j.width = t.size.fullWidth),
+                                      (j.height = t.size.fullHeight),
+                                      (j.color = k.ref),
+                                      (j.opacity = 1)
+                                    ),
+                                  ),
+                                ],
+                              },
+                              (t) => {
+                                t.targetOpacity = 1;
+                                t.targetColor = e.bgColor || "#73f3cd";
+                              },
+                            ),
+                            dg.Single(
+                              {
+                                fileName:
+                                  "images/themes/world1/background/light/LightBG.png",
+                                playerX: 0 * e.cameraX,
+                                playerY: 0,
+                                height: 960,
+                                y: 0,
+                              },
+                             (t) => {
+                                ((t.playerX = 0.05 * e.cameraX),
+                                (t.playerY = 0.00));
                               },
                             ),
                           ];
