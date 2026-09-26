@@ -56000,7 +56000,7 @@ var version = "v1.20.0";
               }
               return [
                 conditional(
-                  () => getContext(Se).settings.classicTrail || getContext(Se).settings.flyingTrail,
+                  () => getContext(Se).settings.flyingTrail,
                   () => [],
                   () => [
                     playerTrailStrip.Single(
