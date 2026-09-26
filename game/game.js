@@ -51790,7 +51790,7 @@ var version = "v1.20.0";
                   yc,
                   yc,
                 ]),
-                nd.tuple([yc, yc, yc, yc, yc, yc, fc, yc, yc, yc, yc, yc, yc]),
+                nd.tuple([yc, yc, yc, yc, yc, yc, fc, yc, yc, yc, yc, yc, yc, yc, yc]),
                 nd.tuple([yc, yc, yc, yc, yc, yc, fc]),
               ]),
               Oc(Gc([mc, mc])),
@@ -51816,7 +51816,8 @@ var version = "v1.20.0";
                   debug,
                   release,
                   animate,
-                  freeze
+                  freeze,
+                  classic
                 ],
                 d,
               ] = e;
@@ -51859,6 +51860,7 @@ var version = "v1.20.0";
                   showDebug: debug || false,
                   disableReleaseBuffer: release || false,
                   animateEditor: animate || false,
+                  classicTrail: classic || false
                 },
                 friendRequests: d.map(([e, t]) => ({
                   playerName: t,
@@ -51905,6 +51907,7 @@ var version = "v1.20.0";
                 e.settings.disableReleaseBuffer || false,
                 e.settings.animateEditor || false,
                 e.settings.freezeOnDeath || false,
+                e.settings.classicTrail || false,
               ],
               e.friendRequests.map((e) => [e.profileId, e.playerName]),
             ],
@@ -55902,7 +55905,7 @@ var version = "v1.20.0";
           playerTrail = makeSprite({
             render: ({ props: e, getContext }) => {
               if (!e.isFront) {
-                if (a(Se).settings.classicTrail) {
+                if (getContext(Se).settings.classicTrail) {
                   return [
                     onChange(
                         () => e.attempt,
@@ -55932,7 +55935,7 @@ var version = "v1.20.0";
                 }
                 return [
                   ifConditional(
-                    () => a(Se).settings.flyingTrail,
+                    () => getContext(Se).settings.flyingTrail,
                     () => [
                       onChange(
                         () => e.attempt,
