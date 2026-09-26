@@ -48190,7 +48190,7 @@ var version = "v1.20.1";
               y: -100,
               pathToLevel: [],
               maxFrames: 9877,
-              difficulty: 3,
+              difficulty: 4,
             },
             {
               levelName: "Paradise On E",
