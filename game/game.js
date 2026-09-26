@@ -44537,7 +44537,7 @@ var version = "v1.20.1";
                 U.playerRot = B.clamp2(0, 20, 2 * U.playerGradY) * U.playerDir;
               else if (
                 U.playerPowerups.some(
-                  (e) => e.item === "spaceship" || e.item === "playerStack",
+                  (e) => e.item === "spaceship",
                 ) &&
                 !U.dashing
               )
