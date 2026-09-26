@@ -55901,7 +55901,7 @@ var version = "v1.20.0";
           playerTrail = makeSprite({
             render: ({ props: e, getContext }) => {
               if (!e.isFront) {
-                if (e.theme == "classic") {
+                if (a(Se).settings.classicTrail) {
                   return [
                     onChange(
                         () => e.attempt,
@@ -55931,7 +55931,7 @@ var version = "v1.20.0";
                 }
                 return [
                   ifConditional(
-                    () => e.theme === "infinite",
+                    () => a(Se).settings.flyingTrail,
                     () => [
                       onChange(
                         () => e.attempt,
@@ -64224,7 +64224,7 @@ var version = "v1.20.0";
                             onPress: () => {
                               var a;
                               const { settings: i, updateSettings: n } = t(Se);
-                              n({ flyingTrail: !i.classicTrail });
+                              n({ classicTrail: !i.classicTrail });
                             },
                             width: 250,
                             height: 40,
