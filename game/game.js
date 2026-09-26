@@ -48182,6 +48182,79 @@ var version = "v1.20.1";
           ],
           world5levels = [
             {
+              levelName: "Daydreamer",
+              levelFileName: "daydreamer",
+              song: hl.songs.daydreamer,
+              unlockedByIndex: null,
+              x: -240,
+              y: -100,
+              pathToLevel: [],
+              maxFrames: 9877,
+              difficulty: 3,
+            },
+            {
+              levelName: "Paradise On E",
+              levelFileName: "paradise-on-e",
+              song: hl.songs.paradiseOnE,
+              unlockedByIndex: 1,
+              x: -90,
+              y: -40,
+              pathToLevel: [
+                [-200, -80],
+                [-130, -40]
+              ],
+              maxFrames: 7198,
+              difficulty: 5,
+              hide: true,
+            },
+            {
+              levelName: "Essence",
+              levelFileName: "essence",
+              song: hl.songs.essence,
+              unlockedByIndex: 2,
+              x: 90,
+              y: 40,
+              pathToLevel: [
+                [-50, -20],
+                [50, 20]
+              ],
+              maxFrames: 9877,
+              difficulty: 4,
+              hide: true,
+            },
+            {
+              levelName: "Minds Of The Mad",
+              levelFileName: "minds-of-the-mad",
+              song: hl.songs.mindsOfTheMad,
+              unlockedByIndex: 3,
+              x: 180,
+              y: -100,
+              pathToLevel: [
+                [120, 10],
+                [150 , -80]
+              ],
+              maxFrames: 9877,
+              difficulty: 9,
+              hide: true,
+            },
+            {
+              levelName: "Phobos",
+              levelFileName: "phobos",
+              song: hl.songs.phobos,
+              unlockedByIndex: 3,
+              x: 240,
+              y: 100,
+              pathToLevel: [
+                [130, 40],
+                [200, 100]
+              ],
+              maxFrames: 9877,
+              difficulty: 6,
+              hide: true,
+            },
+          ],
+          /*world7levels = [
+            {
               levelName: "Robot Language",
               levelFileName: "robot-language",
               song: hl.songs.robotLanguage,
@@ -48252,7 +48325,7 @@ var version = "v1.20.1";
               difficulty: 6,
               hide: true,
             },
-          ],
+          ],*/
           Ul = [
             {
               levelName: "Cloud 9",
