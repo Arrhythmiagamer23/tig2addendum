@@ -441,6 +441,7 @@ var version = "1.1.3",
     `images/themes/world1/bottom/block.png`,
     `images/themes/world1Boss/bottom/block.png`,
     `images/themes/skater/bottom/block.png`,
+    `images/themes/dreamy/bottom/block.png`,
 
     `images/themes/ice/bottom/block-small-spike.png`,
     `images/themes/ice/bottom/block-spike-corner.png`,
