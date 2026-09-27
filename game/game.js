@@ -3,7 +3,7 @@ var game;
 var bgOnly = false,
   showcaseOnly = false;
 
-var version = "v1.20.1";
+var version = "v1.20.2";
 (() => {
   var e = {
       8465: (e, t, a) => {
@@ -18340,14 +18340,25 @@ var version = "v1.20.1";
             },
             isBonusTheme: true,
           },
-          la = Object.assign(Object.assign({}, qt), {
+          la = {
             id: "fighter",
             name: "Fighter",
             colour: "#0a0353",
             background: "fighter",
             player: Wt.skins.fighter,
+            objects: {
+                block: "punch",
+                spike: "punch",
+                platform: "world2",
+                dirChange: "world2",
+                flag: "world2",
+                saw: "punch",
+                bottom: "world2",
+                switch: "world2",
+                speedChange: "world2",
+              },
             isBonusTheme: true,
-          }),
+          },
           ca = {
             skater: sa,
             arrows: {
@@ -31208,6 +31219,7 @@ var version = "v1.20.1";
               "images/themes/world3/bottom/laser-line.png",
               "images/themes/classic/bottom/laser-line.png",
               "images/themes/world2/bottom/laser-line.png",
+              "images/themes/punch/bottom/laser-line.png",
               "images/themes/world2/speed-change.png",
               "images/themes/world1/arrow.png",
               "images/themes/world2/arrow.png",
@@ -31218,7 +31230,7 @@ var version = "v1.20.1";
               "images/themes/world2/double-jump.png",
               `images/themes/${e.objects.spike == "classic" ? "classic" : e.objects.spike == "infinite" ? "infinite" : e.objects.spike == "world3" ? "world3" : e.objects.spike == "geometrydash" ? "geometrydash" : "world1"}/saw-big.png`,
               `images/themes/${e.objects.spike == "classic" ? "classic" : e.objects.spike == "infinite" ? "infinite" : e.objects.spike == "world3" ? "world3" : e.objects.spike == "geometrydash" ? "geometrydash" : "world1"}/saw-medium.png`,
-              `images/themes/${e.objects.saw == "classic" ? "classic" : "infinite"}/saw-bar.png`,
+              `images/themes/${e.objects.saw == "classic" ? "classic" : e.objects.saw == "geometrydash" ? "classic" : "infinite"}/saw-bar.png`,
               "images/themes/world1/red.png",
               "images/themes/world1/red-spike.png",
               "images/themes/world1/blue-spike.png",
@@ -31320,6 +31332,7 @@ var version = "v1.20.1";
                     `images/themes/skater/bottom/block.png`,
                     `images/themes/stylemix/bottom/block.png`,
                     `images/themes/geometrydash/bottom/block.png`,
+                    `images/themes/punch/bottom/block.png`,
                     `images/themes/dreamy/bottom/block.png`,
 
                     `images/themes/${e.objects.bottom}/bottom/double-tall-block-spike.png`,
@@ -31900,7 +31913,7 @@ var version = "v1.20.1";
                     }),
 
                     imageArray({
-                      fileName: `images/themes/${e.bigTheme == "classic" ? "classic" : e.bigTheme.includes("infinite") ? e.bigTheme : e.bigTheme == "world3" ? "world3" : "world1"}/saw-big.png`,
+                      fileName: `images/themes/${e.bigTheme == "classic" ? "classic" : e.bigTheme.includes("infinite") ? e.bigTheme : e.bigTheme == "world3" ? "world3" : e.bigTheme == "geometrydash" ? "geometrydash" : "world1"}/saw-big.png`,
                       props: () => ({}),
                       update: (t, a, i) => {
                         var n, s, o;
@@ -31935,7 +31948,7 @@ var version = "v1.20.1";
                       testId: (e, t) => `Saw-${t}`,
                     }),
                     imageArray({
-                      fileName: `images/themes/${e.theme == "classic" ? "classic" : e.theme.includes("infinite") ? e.theme : "infinite"}/saw-bar.png`,
+                      fileName: `images/themes/${e.theme == "classic" ? "classic" : e.theme == "geometrydash" ? "classic" : e.theme.includes("infinite") ? e.theme : "infinite"}/saw-bar.png`,
                       props: () => ({}),
                       update: (t, a, i) => {
                         var n, s, o;
@@ -32010,7 +32023,7 @@ var version = "v1.20.1";
                       },
                     }),
                     imageArray({
-                      fileName: `images/themes/${e.bigTheme == "classic" ? "classic" : e.bigTheme.includes("infinite") ? e.bigTheme : e.bigTheme == "world3" ? "world3" : "world1"}/saw-medium.png`,
+                      fileName: `images/themes/${e.bigTheme == "classic" ? "classic" : e.bigTheme.includes("infinite") ? e.bigTheme : e.bigTheme == "world3" ? "world3" : e.bigTheme == "geometrydash" ? "geometrydash" : "world1"}/saw-medium.png`,
                       props: () => ({}),
                       update: (t, a, i) => {
                         var n, s, o;
@@ -32219,7 +32232,7 @@ var version = "v1.20.1";
                           testId: (e, t) => `Saw-${t}`,
                         }),
                         imageArray({
-                          fileName: `images/themes/${e.bigTheme == "classic" ? "classic" : e.bigTheme.includes("infinite") ? e.bigTheme : e.bigTheme == "world3" ? "world3" : "world1"}/saw-medium.png`,
+                          fileName: `images/themes/${e.bigTheme == "classic" ? "classic" : e.bigTheme.includes("infinite") ? e.bigTheme : e.bigTheme == "world3" ? "world3" : e.bigTheme == "geometrydash" ? "geometrydash" : "world1"}/saw-medium.png`,
                           props: () => ({}),
                           update: (e, t) => {
                             ((e.width = t.width * sawRatio),
@@ -32239,7 +32252,7 @@ var version = "v1.20.1";
                           testId: (e, t) => `Saw-${t}`,
                         }),
                         imageArray({
-                          fileName: `images/themes/${e.bigTheme == "classic" ? "classic" : e.bigTheme.includes("infinite") ? e.bigTheme : e.bigTheme == "world3" ? "world3" : "world1"}/saw-big.png`,
+                          fileName: `images/themes/${e.bigTheme == "classic" ? "classic" : e.bigTheme.includes("infinite") ? e.bigTheme : e.bigTheme == "world3" ? "world3" : e.bigTheme == "geometrydash" ? "geometrydash" : "world1"}/saw-big.png`,
                           props: () => ({}),
                           update: (e, t) => {
                             ((e.width = t.width * sawRatio),
@@ -32259,7 +32272,7 @@ var version = "v1.20.1";
                           testId: (e, t) => `Saw-${t}`,
                         }),
                         imageArray({
-                          fileName: `images/themes/${e.theme == "classic" ? "classic" : e.theme.includes("infinite") ? e.theme : "infinite"}/saw-bar.png`,
+                          fileName: `images/themes/${e.theme == "classic" ? "classic" : e.theme.includes("infinite") ? e.theme : e.theme == "geometrydash" ? "classic" : "infinite"}/saw-bar.png`,
                           props: () => ({}),
                           update: (e, t) => {
                             ((e.width = t.height),
@@ -42991,7 +43004,7 @@ var version = "v1.20.1";
                     isEditor: true,
                     justHit: false,
                     theme: switchTheme,
-                    orbTheme: g.properties.theme.id === "classic" ? "classic" : g.properties.theme.id === "stylemix" ? "classic" : switchTheme,
+                    orbTheme: g.properties.theme.id === "classic" ? "classic" : g.properties.theme.id === "stylemix" ? "classic" : g.properties.theme.id === "geometrydash" ? "classic" : switchTheme,
                     spineContext: getContext(Ws),
                     paused: pauseAnimations,
                     scale: propsScale,
@@ -43310,7 +43323,7 @@ var version = "v1.20.1";
                     isEditor: true,
                     justHit: false,
                     theme: n.switch,
-                    orbTheme: t.properties.theme.id === "classic" ? "classic" : t.properties.theme.id === "stylemix" ? "classic" : n.switch,
+                    orbTheme: t.properties.theme.id === "classic" ? "classic" : t.properties.theme.id === "stylemix" ? "classic" : t.properties.theme.id === "geometrydash" ? "classic" : n.switch,
                     paused: paused,
                     spineContext: spineContext,
                     scale: scale,
@@ -62111,7 +62124,7 @@ var version = "v1.20.1";
                       (t.paused = e.paused),
                       (t.df = e.df),
                       (t.theme = e.layout.properties.theme.objects.switch),
-                      (t.orbTheme = e.layout.properties.theme.id === "classic" ? "classic" : t.orbTheme = e.layout.properties.theme.id === "stylemix" ? "classic" : e.layout.properties.theme.objects.switch),
+                      (t.orbTheme = e.layout.properties.theme.id === "classic" ? "classic" : t.orbTheme = e.layout.properties.theme.id === "stylemix" ? "classic" : t.orbTheme = e.layout.properties.theme.id === "geometrydash" ? "classic" : e.layout.properties.theme.objects.switch),
                       t.theme === "infinite" && (t.theme = getInfiniteThemePath(e.bgColor)),
                       (t.justHit =
                         null !== e.justHitObject &&
