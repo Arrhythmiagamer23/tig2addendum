@@ -15906,6 +15906,15 @@ var version = "v1.20.3";
                 isBoss: e == null ? false : e.isBoss || false,
                 isGround: e == null ? false : e.isGround || false,
                 isFade: e ? e.isFade || false : false,
+                isWorld1: e == null ? false : e.isWorld1 || false,
+                isWorld2: e == null ? false : e.isWorld2 || false,
+                isWorld3: e == null ? false : e.isWorld3 || false,
+                isWorld4: e == null ? false : e.isWorld4 || false,
+                isSkater: e == null ? false : e.isSkater || false,
+                isDreamy: e == null ? false : e.isDreamy || false,
+                isKungFu: e == null ? false : e.isKungFu || false,
+                isClassic: e == null ? false : e.isClassic || false,
+                isInfinite: e == null ? false : e.isInfinite || false,
                 rotation: 0,
                 skipMissiles: false,
                 snapSize: null == e ? void 0 : e.snapSize,
@@ -15937,6 +15946,15 @@ var version = "v1.20.3";
                 isVoid: e != undefined && (e?.isVoid || false),
                 isBoss: e == undefined ? false : e?.isBoss || false,
                 isFade: e ? e.isFade || false : false,
+                isWorld1: e == null ? false : e.isWorld1 || false,
+                isWorld2: e == null ? false : e.isWorld2 || false,
+                isWorld3: e == null ? false : e.isWorld3 || false,
+                isWorld4: e == null ? false : e.isWorld4 || false,
+                isSkater: e == null ? false : e.isSkater || false,
+                isDreamy: e == null ? false : e.isDreamy || false,
+                isKungFu: e == null ? false : e.isKungFu || false,
+                isClassic: e == null ? false : e.isClassic || false,
+                isInfinite: e == null ? false : e.isInfinite || false,
                 skipMissiles: false,
                 snapSize: { offsetX: 7.5, offsetY: 7.5 },
               };
@@ -18637,6 +18655,15 @@ var version = "v1.20.3";
                     (updated.trigger = obj.trigger),
                     (updated.steel = obj.steel),
                     (updated.isVoid = obj.isVoid),
+                    (updated.isWorld1 = obj.isWorld1),
+                    (updated.isWorld2 = obj.isWorld2),
+                    (updated.isWorld3 = obj.isWorld3),
+                    (updated.isWorld4 = obj.isWorld4),
+                    (updated.isSkater = obj.isSkater),
+                    (updated.isDreamy = obj.isDreamy),
+                    (updated.isKungFu = obj.isKungFu),
+                    (updated.isClassic = obj.isClassic),
+                    (updated.isInfinite = obj.isInfinite),
                     (updated.isBoss = obj.isBoss),
                     (updated.trigger = obj.trigger),
                     (updated.init = obj.init),
@@ -20448,6 +20475,15 @@ var version = "v1.20.3";
                           !i.isVoid &&
                           !i.isBoss &&
                           !i.isFade &&
+                          !i.isWorld1 &&
+                          !i.isWorld2 &&
+                          !i.isWorld3 &&
+                          !i.isWorld4 &&
+                          !i.isSkater &&
+                          !i.isDreamy &&
+                          !i.isKungFu &&
+                          !i.isClassic &&
+                          !i.isInfinite &&
                           !(null == r ? void 0 : r.destroyed) &&
                           !r?.off),
                           (a.width = i.width * t),
@@ -20497,6 +20533,15 @@ var version = "v1.20.3";
                           !i?.isVoid &&
                           !i?.isBoss &&
                           !i.isFade &&
+                          !i?.isWorld1 &&
+                          !i?.isWorld2 &&
+                          !i?.isWorld3 &&
+                          !i?.isWorld4 &&
+                          !i?.isSkater &&
+                          !i?.isDreamy &&
+                          !i?.isKungFu &&
+                          !i?.isClassic &&
+                          !i?.isInfinite &&
                           !(null == r ? void 0 : r.destroyed) &&
                           !r?.off),
                           (a.width = i.width * t),
@@ -20826,6 +20871,438 @@ var version = "v1.20.3";
               onChange(
                 () => e.theme,
                 () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/world1/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isWorld1 && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/world2/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isWorld2 && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/world3/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isWorld3 && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * (41 / 30)),
+                          (a.height = i.height * (41 / 30)),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/world4/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isWorld4 && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/skater/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isSkater && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/dreamy/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isDreamy && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/punch/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isKungFu && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/classic/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isClassic && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/infinite/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isInfinite && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
                   const t = "world3" === e.theme ? 41 / 30 : 1;
                   return [
                     imageArray({
@@ -20845,6 +21322,15 @@ var version = "v1.20.3";
                           !i?.steel &&
                           i?.isBoss &&
                           !i?.isVoid &&
+                          !i?.isWorld1 &&
+                          !i?.isWorld2 &&
+                          !i?.isWorld3 &&
+                          !i?.isWorld4 &&
+                          !i?.isSkater &&
+                          !i?.isDreamy &&
+                          !i?.isKungFu &&
+                          !i?.isClassic &&
+                          !i?.isInfinite &&
                           !(null == r ? void 0 : r.destroyed) &&
                           !(null == r
                             ? void 0
@@ -20892,6 +21378,15 @@ var version = "v1.20.3";
                           !i?.isBoss &&
                           !i?.isVoid &&
                           i?.isFade &&
+                          !i?.isWorld1 &&
+                          !i?.isWorld2 &&
+                          !i?.isWorld3 &&
+                          !i?.isWorld4 &&
+                          !i?.isSkater &&
+                          !i?.isDreamy &&
+                          !i?.isKungFu &&
+                          !i?.isClassic &&
+                          !i?.isInfinite &&
                           !(null == r ? void 0 : r.destroyed)),
                           (a.width = i.width * (41 / 30)),
                           (a.height = i.height * (41 / 30)),
@@ -31211,6 +31706,15 @@ var version = "v1.20.3";
               `images/themes/${e.objects.spike}/spike.png`,
               `images/themes/${e.objects.switch}/switch-platform.png`,
               `images/themes/${e.objects.switch}/switch-button.png`,
+              "images/themes/world1/block.png",
+              "images/themes/world2/block.png",
+              "images/themes/world3/block.png",
+              "images/themes/world4/block.png",
+              "images/themes/skater/block.png",
+              "images/themes/dreamy/block.png",
+              "images/themes/punch/block.png",
+              "images/themes/classic/block.png",
+              "images/themes/infinite/block.png",
               "images/themes/classic/fan.png",
               "images/themes/world3/block-white.png",
               "images/themes/world3/block-white-light.png",
@@ -39282,7 +39786,7 @@ var version = "v1.20.3";
                       options: [
                         {
                           name: "Normal",
-                          selected: !t.steel && !t.isVoid && !t.isBoss && !t.isFade,
+                          selected: !t.steel && !t.isVoid && !t.isBoss && !t.isFade && !t.isWorld1 && !t.isWorld2 && !t.isWorld3 && !t.isWorld4 && !t.isSkater && !t.isDreamy && !t.isKungFu && !t.isClassic && !t.isInfinite,
                           onPress: () => {
                             a.map((j) => {
                               e({
@@ -39295,6 +39799,15 @@ var version = "v1.20.3";
                                     isVoid: false,
                                     isBoss: false,
                                     isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
                                   }),
                               });
                             });
@@ -39315,6 +39828,15 @@ var version = "v1.20.3";
                                     isVoid: false,
                                     isBoss: false,
                                     isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
                                   }),
                               });
                             });
@@ -39335,6 +39857,15 @@ var version = "v1.20.3";
                                     steel: false,
                                     isBoss: false,
                                     isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
                                   }),
                               });
                             });
@@ -39355,6 +39886,15 @@ var version = "v1.20.3";
                                     steel: false,
                                     isBoss: true,
                                     isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
                                   }),
                               });
                             });
@@ -39375,6 +39915,276 @@ var version = "v1.20.3";
                                     steel: false,
                                     isBoss: false,
                                     isFade: true,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "World 1",
+                          selected: t?.isWorld1,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: true,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "World 2",
+                          selected: t?.isWorld2,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: true,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "World 3",
+                          selected: t?.isWorld3,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: true,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "World 4",
+                          selected: t?.isWorld4,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: true,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Skater",
+                          selected: t?.isSkater,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: true,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Dreamy",
+                          selected: t?.isDreamy,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: true,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Fighter",
+                          selected: t?.isKungFu,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: true,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Classic",
+                          selected: t?.isClassic,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: true,
+                                    isInfinite: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Infinite",
+                          selected: t?.isInfinite,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: true,
                                   }),
                               });
                             });
