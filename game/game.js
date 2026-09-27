@@ -3,7 +3,7 @@ var game;
 var bgOnly = false,
   showcaseOnly = false;
 
-var version = "v1.20.2";
+var version = "v1.20.3";
 (() => {
   var e = {
       8465: (e, t, a) => {
@@ -30921,7 +30921,10 @@ var version = "v1.20.2";
               case "infinite":
                 return ["images/themes/infinite/background/tile.png"];
               case "ice":
-                return ["images/themes/ice/background/SnowParallax.png"];
+                return [
+                  "images/themes/ice/background/SnowParallax.png",
+                  "images/themes/ice/background/snow.png",
+                ];
               case "geometrydash":
                 return ["images/themes/geometrydash/background/BG.png"];
               case "red":
@@ -58078,6 +58081,59 @@ var version = "v1.20.2";
               }),
             ],
           }),
+          _xg = makeSprite({
+            init: ({ device: e, props: t }) => ({
+              snow: Array.from({ length: 20 }).map(() => ({
+                x:
+                  st(-e.size.fullWidth / 2, e.size.fullWidth / 2, e.random) +
+                  t.moveX,
+                localX: 0,
+                y: st(-e.size.fullHeight / 2, e.size.fullHeight / 2, e.random),
+                speedX: 0,
+                speedY: e.random() + 1,
+              })),
+            }),
+            loop({ props: e, state: t, device: a }) {
+              if (e.paused) return;
+              const i = a.size.fullWidth / 2,
+                n = a.size.fullHeight / 2;
+              for (const s of t.snow) {
+                ((s.y -= s.speedY),
+                  s.y < -n &&
+                    ((s.y += a.size.fullHeight + 10),
+                    (s.speedX = 0),
+                    (s.x =
+                      st(
+                        -a.size.fullWidth / 2,
+                        a.size.fullWidth / 2,
+                        a.random,
+                      ) + e.moveX)),
+                  (s.speedX += (a.random() - 0.5) / 4),
+                  (s.x += s.speedX),
+                  (s.localX = s.x - e.moveX));
+                const t = -i - 30,
+                  o = i + 30;
+                for (; s.localX < t; )
+                  ((s.x += a.size.fullWidth + 45), (s.localX = s.x - e.moveX));
+                for (; s.localX > o; )
+                  ((s.x -= a.size.fullWidth + 45), (s.localX = s.x - e.moveX));
+              }
+            },
+            render: ({ state: e, device: t }) => [
+              imageArray({
+                fileName: "images/themes/ice/background/snow.png",
+                props: () => ({
+                  width: 6,
+                  height: 6,
+                  rotation: 360 * t.random(),
+                }),
+                update: (e, t) => {
+                  ((e.x = t.localX), (e.y = t.y));
+                },
+                array: () => e.snow,
+              }),
+            ],
+          }),
           arrowsBGTable = function () {
             return {
               "#FF0000": "#ff1212",
@@ -60185,6 +60241,15 @@ var version = "v1.20.2";
                       case "speed":
                         return [
                           _g.Single(
+                            { moveX: e.cameraX, paused: e.paused },
+                            (t) => {
+                              ((t.moveX = e.cameraX), (t.paused = e.paused));
+                            },
+                          ),
+                        ];
+                      case "ice":
+                        return [
+                          _xg.Single(
                             { moveX: e.cameraX, paused: e.paused },
                             (t) => {
                               ((t.moveX = e.cameraX), (t.paused = e.paused));
