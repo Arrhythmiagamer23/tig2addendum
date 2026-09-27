@@ -18513,6 +18513,25 @@ var version = "v1.20.1";
             world2Red: $t,
             world3: Zt,
             world3Red: ea,
+            world3light: {
+              id: "world3light",
+              name: "World 3 Light",
+              colour: "#0cd5f0",
+              player: Wt.skins.glow,
+              background: "world3light",
+              objects: {
+                block: "world3",
+                spike: "world3",
+                platform: "world1",
+                dirChange: "world1",
+                flag: "world1",
+                saw: "world1",
+                bottom: "world3",
+                switch: "world3",
+                speedChange: "speed",
+              },
+              isBonusTheme: true,
+            },
             virtual: Object.assign(Object.assign({}, Zt), {id: "virtual", name: "Virtual", player: Wt.skins.layla, hidden: true}),
             world4: aa,
             world4Boss: ia,
@@ -30914,6 +30933,10 @@ var version = "v1.20.1";
                   "images/themes/world3/background/stars-moving.png",
                   "images/themes/world3/background/stars-static.png",
                   "images/themes/world3/background/cloud.png",
+                ];
+              case "world3light":
+                return [
+                  "images/themes/world3/background/light-clouds.png",
                 ];
               case "synthwave":
                 return [
@@ -50033,7 +50056,8 @@ var version = "v1.20.1";
               (e[(e.StyleMix = 12)] = "StyleMix"),
               (e[(e.Ice = 13)] = "Ice"),
               (e[(e.GeometryDash = 14)] = "GeometryDash"),
-              (e[(e.World1Light = 15)] = "World1Light"));
+              (e[(e.World1Light = 15)] = "World1Light"),
+              (e[(e.World3Light = 16)] = "World3Light"));
           })(rd || (rd = {})),
           (function (e) {
             ((e[(e.Rot0 = 0)] = "Rot0"),
@@ -50221,6 +50245,7 @@ var version = "v1.20.1";
             e[(e.Ice = 20)] = "Ice";
             e[(e.GeometryDash = 21)] = "GeometryDash";
             e[(e.World1Light = 22)] = "World1Light";
+            e[(e.World3Light = 23)] = "World3Light";
           })(Od || (Od = {})),
           (function (e) {
             ((e[(e.Gun = 0)] = "Gun"),
@@ -50356,6 +50381,7 @@ var version = "v1.20.1";
             e[(e.Ice = 20)] = "Ice";
             e[(e.GeometryDash = 21)] = "GeometryDash";
             e[(e.World1Light = 22)] = "World1Light";
+            e[(e.World3Light = 23)] = "World3Light";
           })(xd || (xd = {})));
         const Bd = Gc([
             mc,
@@ -51234,6 +51260,7 @@ var version = "v1.20.1";
             [xd.Ice]: "ice",
             [xd.GeometryDash]: "geometrydash",
             [xd.World1Light]: "world1light",
+            [xd.World3Light]: "world3light",
             [xd.Virtual]: "virtual",
           },
           Vd = {
@@ -59686,6 +59713,49 @@ var version = "v1.20.1";
                                 playerY: 0,
                                 height: 960,
                                 y: 0,
+                              },
+                             (t) => {
+                                ((t.playerX = 0.05 * e.cameraX),
+                                (t.playerY = 0.00));
+                              },
+                            ),
+                          ];
+                        case "world3light":
+                          return [
+                            Go.Single(
+                              {
+                                targetOpacity: 1,
+                                targetColor: e.bgColor || "#0cd5f0",
+                                sprite: (s, k) => [
+                                  p(
+                                    {
+                                      color: k.ref,
+                                      width: t.size.fullWidth,
+                                      height: t.size.fullHeight,
+                                      opacity: 1,
+                                    },
+                                    (j) => (
+                                      (j.width = t.size.fullWidth),
+                                      (j.height = t.size.fullHeight),
+                                      (j.color = k.ref),
+                                      (j.opacity = 1)
+                                    ),
+                                  ),
+                                ],
+                              },
+                              (t) => {
+                                t.targetOpacity = 1;
+                                t.targetColor = e.bgColor || "#0cd5f0";
+                              },
+                            ),
+                            dg.Single(
+                              {
+                                fileName:
+                                  "images/themes/world3/background/light-clouds.png",
+                                playerX: 0 * e.cameraX,
+                                playerY: 0,
+                                height: 960,
+                                y: 100,
                               },
                              (t) => {
                                 ((t.playerX = 0.05 * e.cameraX),
