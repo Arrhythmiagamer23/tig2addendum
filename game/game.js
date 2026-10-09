@@ -47191,21 +47191,6 @@ var version = "v1.21.0";
                 bpm: 150,
                 fileName: "audio/tracks/kommisar-last-tile.mp3",
               },
-              rummy: {
-                name: "Rum n' Bass",
-                author: "BoomKitty",
-                fileName: "audio/tracks/boomkitty-rum-and-bass.mp3",
-                bpm: 132,
-                isBonusSong: true,
-              },
-              forYou: {
-                name: "For You (+ Waterfall mashup)",
-                author: "ColBreakz & EXODIE, SkybreakEDM",
-                fileName: "audio/tracks/colbreakz-for-you.mp3",
-                bpm: 145,
-                isBonusSong: true,
-              },
-
               coolFriends: {
                 name: "Cool Friends",
                 author: "Silva Hound (Murtagh & Veschell Remix)",
@@ -47221,6 +47206,21 @@ var version = "v1.21.0";
                 bpm: 201,
                 isBonusSong: true,
               },
+              rummy: {
+                name: "Rum n' Bass",
+                author: "BoomKitty",
+                fileName: "audio/tracks/boomkitty-rum-and-bass.mp3",
+                bpm: 132,
+                isBonusSong: true,
+              },
+              forYou: {
+                name: "For You (+ Waterfall mashup)",
+                author: "ColBreakz & EXODIE, SkybreakEDM",
+                fileName: "audio/tracks/colbreakz-for-you.mp3",
+                bpm: 145,
+                isBonusSong: true,
+              },
+
               chaozFantasy: {
                 name: "Chaoz Fantasy",
                 author: "ParagonX9",
@@ -49377,6 +49377,18 @@ var version = "v1.21.0";
               maxFrames: 8782,
               difficulty: 8,
             },
+            /*{
+              levelName: "For You",
+              levelFileName: "for-you",
+              author: "Fluke Games",
+              song: hl.songs.forYou,
+              unlockedByIndex: null,
+              x: 0,
+              y: 0,
+              pathToLevel: [],
+              maxFrames: 8836,
+              difficulty: 5,
+            },*/
             {
               levelName: "Rum n' Bass",
               levelFileName: "rum-and-bass",
@@ -49388,6 +49400,31 @@ var version = "v1.21.0";
               maxFrames: 11577,
               difficulty: 6,
             },
+            /*{
+              levelName: "Cool Friends",
+              levelFileName: "cool-friends",
+              song: hl.songs.coolFriends,
+
+              author: "Fluke Games",
+              unlockedByIndex: null,
+              x: 0,
+              y: 0,
+              pathToLevel: [],
+              maxFrames: 10740,
+              difficulty: 5,
+            },*/
+            /*{
+              levelName: "Nacreous Snowmelt",
+              levelFileName: "nacreous-snowmelt",
+              song: hl.songs.nacreousSnowmelt,
+              author: "Fluke Games",
+              unlockedByIndex: null,
+              x: 0,
+              y: 0,
+              pathToLevel: [],
+              maxFrames: 10996,
+              difficulty: 6,
+            },*/
             {
               levelName: "Aurora",
               levelFileName: "aurora",
@@ -49400,6 +49437,18 @@ var version = "v1.21.0";
               maxFrames: 9877,
               difficulty: 11,
             },
+            /*{
+              levelName: "Aura (Legacy)",
+              levelFileName: "aura",
+              author: "FlukeGames",
+              song: hl.songs.aura,
+              unlockedByIndex: null,
+              x: 0,
+              y: 0,
+              pathToLevel: [],
+              maxFrames: 9877,
+              difficulty: 10,
+            },*/
             {
               levelName: "Octane (Full Version)",
               levelFileName: "octane-extended",
