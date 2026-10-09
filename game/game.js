@@ -15915,6 +15915,8 @@ var version = "v1.21.0";
                 isKungFu: e == null ? false : e.isKungFu || false,
                 isClassic: e == null ? false : e.isClassic || false,
                 isInfinite: e == null ? false : e.isInfinite || false,
+                isGeometryDash: e == null ? false : e.isGeometryDash || false,
+                isSnow: e == null ? false : e.isSnow || false,
                 rotation: 0,
                 skipMissiles: false,
                 snapSize: null == e ? void 0 : e.snapSize,
@@ -15955,6 +15957,8 @@ var version = "v1.21.0";
                 isKungFu: e == null ? false : e.isKungFu || false,
                 isClassic: e == null ? false : e.isClassic || false,
                 isInfinite: e == null ? false : e.isInfinite || false,
+                isGeometryDash: e == null ? false : e.isGeometryDash || false,
+                isSnow: e == null ? false : e.isSnow || false,
                 skipMissiles: false,
                 snapSize: { offsetX: 7.5, offsetY: 7.5 },
               };
@@ -18664,6 +18668,8 @@ var version = "v1.21.0";
                     (updated.isKungFu = obj.isKungFu),
                     (updated.isClassic = obj.isClassic),
                     (updated.isInfinite = obj.isInfinite),
+                    (updated.isGeometryDash = obj.isGeometryDash),
+                    (updated.isSnow = obj.isSnow),
                     (updated.isBoss = obj.isBoss),
                     (updated.trigger = obj.trigger),
                     (updated.init = obj.init),
@@ -20484,6 +20490,8 @@ var version = "v1.21.0";
                           !i.isKungFu &&
                           !i.isClassic &&
                           !i.isInfinite &&
+                          !i.isGeometryDash &&
+                          !i.isSnow &&
                           !(null == r ? void 0 : r.destroyed) &&
                           !r?.off),
                           (a.width = i.width * t),
@@ -20542,6 +20550,8 @@ var version = "v1.21.0";
                           !i?.isKungFu &&
                           !i?.isClassic &&
                           !i?.isInfinite &&
+                          !i?.isGeometryDash &&
+                          !i?.isSnow &&
                           !(null == r ? void 0 : r.destroyed) &&
                           !r?.off),
                           (a.width = i.width * t),
@@ -21303,6 +21313,54 @@ var version = "v1.21.0";
               onChange(
                 () => e.theme,
                 () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/geometrydash/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isGeometryDash && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
                   const t = "world3" === e.theme ? 41 / 30 : 1;
                   return [
                     imageArray({
@@ -21331,6 +21389,8 @@ var version = "v1.21.0";
                           !i?.isKungFu &&
                           !i?.isClassic &&
                           !i?.isInfinite &&
+                          !i?.isGeometryDash &&
+                          !i?.isSnow &&
                           !(null == r ? void 0 : r.destroyed) &&
                           !(null == r
                             ? void 0
@@ -21387,6 +21447,8 @@ var version = "v1.21.0";
                           !i?.isKungFu &&
                           !i?.isClassic &&
                           !i?.isInfinite &&
+                          !i?.isGeometryDash &&
+                          !i?.isSnow &&
                           !(null == r ? void 0 : r.destroyed)),
                           (a.width = i.width * (41 / 30)),
                           (a.height = i.height * (41 / 30)),
@@ -31715,6 +31777,7 @@ var version = "v1.21.0";
               "images/themes/punch/block.png",
               "images/themes/classic/block.png",
               "images/themes/infinite/block.png",
+              "images/themes/geometrydash/block.png",
               "images/themes/classic/fan.png",
               "images/themes/world3/block-white.png",
               "images/themes/world3/block-white-light.png",
@@ -39786,7 +39849,7 @@ var version = "v1.21.0";
                       options: [
                         {
                           name: "Normal",
-                          selected: !t.steel && !t.isVoid && !t.isBoss && !t.isFade && !t.isWorld1 && !t.isWorld2 && !t.isWorld3 && !t.isWorld4 && !t.isSkater && !t.isDreamy && !t.isKungFu && !t.isClassic && !t.isInfinite,
+                          selected: !t.steel && !t.isVoid && !t.isBoss && !t.isFade && !t.isWorld1 && !t.isWorld2 && !t.isWorld3 && !t.isWorld4 && !t.isSkater && !t.isDreamy && !t.isKungFu && !t.isClassic && !t.isInfinite && !t.isGeometryDash && !t.isSnow,
                           onPress: () => {
                             a.map((j) => {
                               e({
@@ -39808,6 +39871,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -39837,6 +39902,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -39866,6 +39933,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -39895,6 +39964,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -39924,6 +39995,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -39953,6 +40026,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -39982,6 +40057,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -40011,6 +40088,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -40040,6 +40119,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -40069,6 +40150,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -40098,6 +40181,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -40127,6 +40212,8 @@ var version = "v1.21.0";
                                     isKungFu: true,
                                     isClassic: false,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -40156,6 +40243,8 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: true,
                                     isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
                                   }),
                               });
                             });
@@ -40185,6 +40274,70 @@ var version = "v1.21.0";
                                     isKungFu: false,
                                     isClassic: false,
                                     isInfinite: true,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Geometry Dash",
+                          selected: t?.isGeometryDash,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: true,
+                                    isSnow: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Snow",
+                          selected: t?.isSnow,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: true,
                                   }),
                               });
                             });
