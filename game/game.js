@@ -47206,6 +47206,21 @@ var version = "v1.21.0";
                 isBonusSong: true,
               },
 
+              coolFriends: {
+                name: "Cool Friends",
+                author: "Silva Hound (Murtagh & Veschell Remix)",
+                fileName: "audio/tracks/silva-hound-cool-friends.mp3",
+                bpm: 115,
+                isBonusSong: true,
+              },
+
+              nacreousSnowmelt: {
+                name: "Nacreous Snowmelt",
+                author: "Camellia",
+                fileName: "audio/tracks/camellia-nacreous-snowmelt.mp3",
+                bpm: 201,
+                isBonusSong: true,
+              },
               chaozFantasy: {
                 name: "Chaoz Fantasy",
                 author: "ParagonX9",
@@ -49371,31 +49386,6 @@ var version = "v1.21.0";
               y: 0,
               pathToLevel: [],
               maxFrames: 11577,
-              difficulty: 6,
-            },
-            {
-              levelName: "Cool Friends",
-              levelFileName: "cool-friends",
-              song: hl.songs.coolFriends,
-
-              author: "Fluke Games",
-              unlockedByIndex: null,
-              x: 0,
-              y: 0,
-              pathToLevel: [],
-              maxFrames: 10740,
-              difficulty: 5,
-            },
-            {
-              levelName: "Nacreous Snowmelt",
-              levelFileName: "nacreous-snowmelt",
-              song: hl.songs.nacreousSnowmelt,
-              author: "Fluke Games",
-              unlockedByIndex: null,
-              x: 0,
-              y: 0,
-              pathToLevel: [],
-              maxFrames: 10996,
               difficulty: 6,
             },
             {
