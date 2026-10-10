@@ -15917,6 +15917,18 @@ var version = "v1.21.0";
                 isInfinite: e == null ? false : e.isInfinite || false,
                 isGeometryDash: e == null ? false : e.isGeometryDash || false,
                 isSnow: e == null ? false : e.isSnow || false,
+                isClassicBoss: e == null ? false : e.isClassicBoss || false,
+                isWorld1Boss: e == null ? false : e.isWorld1Boss || false,
+                isWorld2Boss: e == null ? false : e.isWorld2Boss || false,
+                isWorld3Boss: e == null ? false : e.isWorld3Boss || false,
+                isWorld4Boss: e == null ? false : e.isWorld4Boss || false,
+                isSkaterBoss: e == null ? false : e.isSkaterBoss || false,
+                isDreamyBoss: e == null ? false : e.isDreamyBoss || false,
+                isKungFuBoss: e == null ? false : e.isKungFuBoss || false,
+                isInfiniteBoss: e == null ? false : e.isInfiniteBoss || false,
+                isSnowBoss: e == null ? false : e.isSnowBoss || false,
+                isDreamyAlt: e == null ? false : e.isDreamyAlt || false,
+                isDreamyBossAlt: e == null ? false : e.isDreamyBossAlt || false,
                 rotation: 0,
                 skipMissiles: false,
                 snapSize: null == e ? void 0 : e.snapSize,
@@ -15959,6 +15971,18 @@ var version = "v1.21.0";
                 isInfinite: e == null ? false : e.isInfinite || false,
                 isGeometryDash: e == null ? false : e.isGeometryDash || false,
                 isSnow: e == null ? false : e.isSnow || false,
+                isClassicBoss: e == null ? false : e.isClassicBoss || false,
+                isWorld1Boss: e == null ? false : e.isWorld1Boss || false,
+                isWorld2Boss: e == null ? false : e.isWorld2Boss || false,
+                isWorld3Boss: e == null ? false : e.isWorld3Boss || false,
+                isWorld4Boss: e == null ? false : e.isWorld4Boss || false,
+                isSkaterBoss: e == null ? false : e.isSkaterBoss || false,
+                isDreamyBoss: e == null ? false : e.isDreamyBoss || false,
+                isKungFuBoss: e == null ? false : e.isKungFuBoss || false,
+                isInfiniteBoss: e == null ? false : e.isInfiniteBoss || false,
+                isSnowBoss: e == null ? false : e.isSnowBoss || false,
+                isDreamyAlt: e == null ? false : e.isDreamyAlt || false,
+                isDreamyBossAlt: e == null ? false : e.isDreamyBossAlt || false,
                 skipMissiles: false,
                 snapSize: { offsetX: 7.5, offsetY: 7.5 },
               };
@@ -18670,6 +18694,16 @@ var version = "v1.21.0";
                     (updated.isInfinite = obj.isInfinite),
                     (updated.isGeometryDash = obj.isGeometryDash),
                     (updated.isSnow = obj.isSnow),
+                    (updated.isDreamyAlt = obj.isDreamyAlt),
+                    (updated.isDreamyBoss = obj.isDreamyBoss),
+                    (updated.isWorld1Boss = obj.isWorld1Boss),
+                    (updated.isWorld2Boss = obj.isWorld2Boss),
+                    (updated.isWorld3Boss = obj.isWorld3Boss),
+                    (updated.isWorld4Boss = obj.isWorld4Boss),
+                    (updated.isSkaterBoss = obj.isSkaterBoss),
+                    (updated.isSnowBoss = obj.isSnowBoss),
+                    (updated.isInfiniteBoss = obj.isInfiniteBoss),
+                    (updated.isClassicBoss = obj.isClassicBoss),
                     (updated.isBoss = obj.isBoss),
                     (updated.trigger = obj.trigger),
                     (updated.init = obj.init),
@@ -20492,6 +20526,17 @@ var version = "v1.21.0";
                           !i.isInfinite &&
                           !i.isGeometryDash &&
                           !i.isSnow &&
+                          !i.isDreamyBossAlt &&
+                          !i.isDreamyBoss &&
+                          !i.isWorld1Boss &&
+                          !i.isWorld2Boss &&
+                          !i.isWorld3Boss &&
+                          !i.isWorld4Boss &&
+                          !i.isSkaterBoss &&
+                          !i.isKungFuBoss &&
+                          !i.isInfiniteBoss &&
+                          !i.isSnowBoss &&
+                          !i?.isClassicBoss &&
                           !(null == r ? void 0 : r.destroyed) &&
                           !r?.off),
                           (a.width = i.width * t),
@@ -20552,6 +20597,17 @@ var version = "v1.21.0";
                           !i?.isInfinite &&
                           !i?.isGeometryDash &&
                           !i?.isSnow &&
+                          !i?.isDreamyBossAlt &&
+                          !i?.isDreamyBoss &&
+                          !i?.isWorld1Boss &&
+                          !i?.isWorld2Boss &&
+                          !i?.isWorld3Boss &&
+                          !i?.isWorld4Boss &&
+                          !i?.isSkaterBoss &&
+                          !i?.isKungFuBoss &&
+                          !i?.isInfiniteBoss &&
+                          !i?.isSnowBoss &&
+                          !i?.isClassicBoss &&
                           !(null == r ? void 0 : r.destroyed) &&
                           !r?.off),
                           (a.width = i.width * t),
@@ -21172,6 +21228,54 @@ var version = "v1.21.0";
                   const t = 1;
                   return [
                     imageArray({
+                      fileName: `images/themes/dreamy/block-alt.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isDreamyAlt && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
                       fileName: `images/themes/punch/block.png`,
                       props: () => ({}),
                       update: (a, i, n) => {
@@ -21361,6 +21465,630 @@ var version = "v1.21.0";
               onChange(
                 () => e.theme,
                 () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/ice/block.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isSnow && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/world1/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isWorld1Boss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/world2/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isWorld2Boss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/world3/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isWorld3Boss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * (41 / 30)),
+                          (a.height = i.height * (41 / 30)),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/world4/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isWorld4Boss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/skater/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isSkaterBoss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/dreamy/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isDreamyBoss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/dreamy/boss-alt.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isDreamyBossAlt && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/punch/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isKungFuBoss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/infinite/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isInfiniteBoss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/ice/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isSnowBoss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/infinite/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isInfiniteBoss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
+                  const t = 1;
+                  return [
+                    imageArray({
+                      fileName: `images/themes/classic/boss.png`,
+                      props: () => ({}),
+                      update: (a, i, n) => {
+                        var s, o;
+                        const r =
+                          null ===
+                            (o =
+                              null === (s = e.inGame) || void 0 === s
+                                ? void 0
+                                : s.blockStates) || void 0 === o
+                            ? void 0
+                            : o[n];
+                        ((a.show =
+                          i?.isClassicBoss && !(null == r ? void 0 : r.destroyed)),
+                          (a.width = i.width * t),
+                          (a.height = i.height * t),
+                          (a.x = i.x),
+                          (a.y = getBlockFallY(
+                            i.x,
+                            i.y,
+                            s && s.playerX,
+                            s && s.fallTypes,
+                            s && s.playerDir,
+                          )));
+                      },
+                      array: () => e.blocks,
+                      testId: (t, a) => {
+                        var i, n;
+                        return `Block-${
+                          null !==
+                            (n =
+                              null === (i = e.inGame) || void 0 === i
+                                ? void 0
+                                : i.indexes[a]) && void 0 !== n
+                            ? n
+                            : a
+                        }`;
+                      },
+                    }),
+                  ];
+                },
+              ),
+              onChange(
+                () => e.theme,
+                () => {
                   const t = "world3" === e.theme ? 41 / 30 : 1;
                   return [
                     imageArray({
@@ -21391,6 +22119,17 @@ var version = "v1.21.0";
                           !i?.isInfinite &&
                           !i?.isGeometryDash &&
                           !i?.isSnow &&
+                          !i?.isDreamyBossAlt &&
+                          !i?.isDreamyBoss &&
+                          !i?.isWorld1Boss &&
+                          !i?.isWorld2Boss &&
+                          !i?.isWorld3Boss &&
+                          !i?.isWorld4Boss &&
+                          !i?.isSkaterBoss &&
+                          !i?.isKungFuBoss &&
+                          !i?.isInfiniteBoss &&
+                          !i?.isSnowBoss &&
+                          !i?.isClassicBoss &&
                           !(null == r ? void 0 : r.destroyed) &&
                           !(null == r
                             ? void 0
@@ -21449,6 +22188,17 @@ var version = "v1.21.0";
                           !i?.isInfinite &&
                           !i?.isGeometryDash &&
                           !i?.isSnow &&
+                          !i?.isDreamyBossAlt &&
+                          !i?.isDreamyBoss &&
+                          !i?.isWorld1Boss &&
+                          !i?.isWorld2Boss &&
+                          !i?.isWorld3Boss &&
+                          !i?.isWorld4Boss &&
+                          !i?.isSkaterBoss &&
+                          !i?.isKungFuBoss &&
+                          !i?.isInfiniteBoss &&
+                          !i?.isSnowBoss &&
+                          !i?.isClassicBoss &&
                           !(null == r ? void 0 : r.destroyed)),
                           (a.width = i.width * (41 / 30)),
                           (a.height = i.height * (41 / 30)),
@@ -31778,6 +32528,19 @@ var version = "v1.21.0";
               "images/themes/classic/block.png",
               "images/themes/infinite/block.png",
               "images/themes/geometrydash/block.png",
+              "images/themes/ice/block.png",
+              "images/themes/world1/boss.png",
+              "images/themes/world2/boss.png",
+              "images/themes/world3/boss.png",
+              "images/themes/world4/boss.png",
+              "images/themes/skater/boss.png",
+              "images/themes/dreamy/boss.png",
+              "images/themes/dreamy/boss-alt.png",
+              "images/themes/punch/boss.png",
+              "images/themes/infinite/boss.png",
+              "images/themes/dreamy/block-alt.png",
+              "images/themes/classic/boss.png",
+              "images/themes/ice/boss.png",
               "images/themes/classic/fan.png",
               "images/themes/world3/block-white.png",
               "images/themes/world3/block-white-light.png",
@@ -39849,7 +40612,7 @@ var version = "v1.21.0";
                       options: [
                         {
                           name: "Normal",
-                          selected: !t.steel && !t.isVoid && !t.isBoss && !t.isFade && !t.isWorld1 && !t.isWorld2 && !t.isWorld3 && !t.isWorld4 && !t.isSkater && !t.isDreamy && !t.isKungFu && !t.isClassic && !t.isInfinite && !t.isGeometryDash && !t.isSnow,
+                          selected: !t.steel && !t.isVoid && !t.isBoss && !t.isFade && !t.isWorld1 && !t.isWorld2 && !t.isWorld3 && !t.isWorld4 && !t.isSkater && !t.isDreamy && !t.isKungFu && !t.isClassic && !t.isInfinite && !t.isGeometryDash && !t.isSnow && !t.isWorld1Boss && !t.isWorld2Boss && !t.isWorld3Boss && !t.isWorld4Boss && !t.isSkaterBoss && !t.isKungFuBoss && !t.isInfiniteBoss && !t.isSnowBoss && !t.isClassicBoss && !t.isDreamyAlt && !t.isDreamyBossAlt,
                           onPress: () => {
                             a.map((j) => {
                               e({
@@ -39873,6 +40636,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -39904,6 +40679,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -39935,6 +40722,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -39966,6 +40765,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -39997,6 +40808,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40028,6 +40851,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40059,6 +40894,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40090,6 +40937,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40121,6 +40980,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40152,6 +41023,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40183,6 +41066,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40214,6 +41109,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40245,6 +41152,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40276,6 +41195,18 @@ var version = "v1.21.0";
                                     isInfinite: true,
                                     isGeometryDash: false,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40307,6 +41238,18 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: true,
                                     isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
                                   }),
                               });
                             });
@@ -40338,6 +41281,534 @@ var version = "v1.21.0";
                                     isInfinite: false,
                                     isGeometryDash: false,
                                     isSnow: true,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "World 1 Boss",
+                          selected: t?.isWorld1Boss,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: true,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "World 2 Boss",
+                          selected: t?.isWorld2Boss,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: true,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "World 3 Boss",
+                          selected: t?.isWorld3Boss,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: true,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "World 4 Boss",
+                          selected: t?.isWorld4Boss,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: true,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Skater Boss",
+                          selected: t?.isSkaterBoss,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: true,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Dreamy (Alt)",
+                          selected: t?.isDreamyAlt,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: true,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Dreamy Boss",
+                          selected: t?.isDreamyBoss,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: true,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Dreamy Boss (Alt)",
+                          selected: t?.isDreamyBossAlt,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: true,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Fighter Boss",
+                          selected: t?.isKungFuBoss,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: true,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Classic Boss",
+                          selected: t?.isClassicBoss,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: true,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Infinite Boss",
+                          selected: t?.isInfiniteBoss,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: true,
+                                    isSnowBoss: false,
+                                  }),
+                              });
+                            });
+                          },
+                        },
+                        {
+                          name: "Snow Boss",
+                          selected: t?.isSnowBoss,
+                          onPress: () => {
+                            a.map((j) => {
+                              e({
+                                type: "setProperty",
+                                array: "blocks",
+                                index: j,
+                                set: (l) =>
+                                  Object.assign(Object.assign({}, l), {
+                                    isVoid: false,
+                                    steel: false,
+                                    isBoss: false,
+                                    isFade: false,
+                                    isWorld1: false,
+                                    isWorld2: false,
+                                    isWorld3: false,
+                                    isWorld4: false,
+                                    isSkater: false,
+                                    isDreamy: false,
+                                    isKungFu: false,
+                                    isClassic: false,
+                                    isInfinite: false,
+                                    isGeometryDash: false,
+                                    isSnow: false,
+                                    isClassicBoss: false,
+                                    isDreamyAlt: false,
+                                    isDreamyBoss: false,
+                                    isDreamyBossAlt: false,
+                                    isWorld1Boss: false,
+                                    isWorld2Boss: false,
+                                    isWorld3Boss: false,
+                                    isWorld4Boss: false,
+                                    isSkaterBoss: false,
+                                    isKungFuBoss: false,
+                                    isInfiniteBoss: false,
+                                    isSnowBoss: true,
                                   }),
                               });
                             });
