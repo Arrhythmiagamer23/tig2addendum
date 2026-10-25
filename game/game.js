@@ -58555,7 +58555,7 @@ var version = "v1.21.0";
                 }
                 return [
                   ifConditional(
-                    () => getContext(Se).settings.flyingTrail,
+                    () => (getContext(Se).settings.flyingTrail),
                     () => [
                       onChange(
                         () => e.attempt,
