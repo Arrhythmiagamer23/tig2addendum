@@ -20536,7 +20536,7 @@ var version = "v1.21.0";
                           !i.isKungFuBoss &&
                           !i.isInfiniteBoss &&
                           !i.isSnowBoss &&
-                          !i?.isClassicBoss &&
+                          !i.isClassicBoss &&
                           !(null == r ? void 0 : r.destroyed) &&
                           !r?.off),
                           (a.width = i.width * t),
@@ -53256,6 +53256,29 @@ var version = "v1.21.0";
                               isVoid: s == 2 ? true : false,
                               isBoss: s == 3 ? true : false,
                               isFade: s == 4 ? true : false,
+                              isWorld1: g == 5 ? true : false,
+                              isWorld2: g == 6 ? true : false,
+                              isWorld3: g == 7 ? true : false,
+                              isWorld4: g == 8 ? true : false,
+                              isSkater: g == 9 ? true : false,
+                              isDreamy: g == 10 ? true : false,
+                              isKungFu: g == 11 ? true : false,
+                              isClassic: g == 12 ? true : false,
+                              isInfinite: g == 13 ? true : false,
+                              isGeometryDash: g == 14 ? true : false,
+                              isSnow: g == 15 ? true : false,
+                              isClassicBoss: g == 16 ? true : false,
+                              isDreamyAlt: g == 17 ? true : false,
+                              isDreamyBoss: g == 18 ? true : false,
+                              isDreamyBossAlt: g == 19 ? true : false,
+                              isWorld1Boss: g == 20 ? true : false,
+                              isWorld2Boss: g == 21 ? true : false,
+                              isWorld3Boss: g == 22 ? true : false,
+                              isWorld4Boss: g == 23 ? true : false,
+                              isSkaterBoss: g == 24 ? true : false,
+                              isKungFuBoss: g == 25 ? true : false,
+                              isInfiniteBoss: g == 26 ? true : false,
+                              isSnowBoss: g == 27 ? true : false,
                             })
                           : $.newBlock({
                               x: e,
@@ -53264,6 +53287,29 @@ var version = "v1.21.0";
                               isVoid: g == 2 ? true : false,
                               isBoss: g == 3 ? true : false,
                               isFade: g == 4 ? true : false,
+                              isWorld1: g == 5 ? true : false,
+                              isWorld2: g == 6 ? true : false,
+                              isWorld3: g == 7 ? true : false,
+                              isWorld4: g == 8 ? true : false,
+                              isSkater: g == 9 ? true : false,
+                              isDreamy: g == 10 ? true : false,
+                              isKungFu: g == 11 ? true : false,
+                              isClassic: g == 12 ? true : false,
+                              isInfinite: g == 13 ? true : false,
+                              isGeometryDash: g == 14 ? true : false,
+                              isSnow: g == 15 ? true : false,
+                              isClassicBoss: g == 16 ? true : false,
+                              isDreamyAlt: g == 17 ? true : false,
+                              isDreamyBoss: g == 18 ? true : false,
+                              isDreamyBossAlt: g == 19 ? true : false,
+                              isWorld1Boss: g == 20 ? true : false,
+                              isWorld2Boss: g == 21 ? true : false,
+                              isWorld3Boss: g == 22 ? true : false,
+                              isWorld4Boss: g == 23 ? true : false,
+                              isSkaterBoss: g == 24 ? true : false,
+                              isKungFuBoss: g == 25 ? true : false,
+                              isInfiniteBoss: g == 26 ? true : false,
+                              isSnowBoss: g == 27 ? true : false,
                             });
                       })
                       .concat(
@@ -53470,20 +53516,20 @@ var version = "v1.21.0";
                         return !b.init;
                       })
                       .map((e) =>
-                        e.steel || e.isVoid || e.isBoss || e.isFade
+                        e.steel || e.isVoid || e.isBoss || e.isFade || e.isWorld1 || e.isWorld2 || e.isWorld3 || e.isWorld4 || e.isSkater || e.isDreamy || e.isKungFu || e.isClassic || e.isInfinite || e.isGeometryDash || e.isSnow || e.isClassicBoss || e.isDreamyAlt || e.isDreamyBoss || e.isDreamyBossAlt || e.isWorld1Boss || e.isWorld2Boss || e.isWorld3Boss || e.isWorld4Boss || e.isSkaterBoss || e.isKungFuBoss || e.isInfiniteBoss || e.isSnowBoss
                           ? e.width === $.miniBlockWidth
                             ? [
                                 e.x,
                                 e.y,
                                 1,
                                 0,
-                                +e.steel + +e.isVoid * 2 + +e.isBoss * 3 + +e.isFade * 4,
+                                +e.steel + +e.isVoid * 2 + +e.isBoss * 3 + +e.isFade * 4 + +e.isWorld1 * 5 + +e.isWorld2 * 6 + +e.isWorld3 * 7 + +e.isWorld4 * 8 + +e.isSkater * 9 + +e.isDreamy * 10 + +e.isKungFu * 11 + +e.isClassic * 12 + +e.isInfinite * 13 + +e.isGeometryDash * 14 + +e.isSnow * 15 + +e.isClassicBoss * 16 + +e.isDreamyAlt * 17 + +e.isDreamyBoss * 18 + +e.isDreamyBossAlt * 19 + +e.isWorld1Boss * 20 + +e.isWorld2Boss * 21 + +e.isWorld3Boss * 22 + +e.isWorld4Boss * 23 + +e.isSkaterBoss * 24 + +e.isKungFuBoss * 25 + +e.isInfiniteBoss * 26 + +e.isSnowBoss * 27,
                               ]
                             : [
                                 e.x,
                                 e.y,
                                 0,
-                                +e.steel + +e.isVoid * 2 + +e.isBoss * 3 + +e.isFade * 4,
+                                +e.steel + +e.isVoid * 2 + +e.isBoss * 3 + +e.isFade * 4 + +e.isWorld1 * 5 + +e.isWorld2 * 6 + +e.isWorld3 * 7 + +e.isWorld4 * 8 + +e.isSkater * 9 + +e.isDreamy * 10 + +e.isKungFu * 11 + +e.isClassic * 12 + +e.isInfinite * 13 + +e.isGeometryDash * 14 + +e.isSnow * 15 + +e.isClassicBoss * 16 + +e.isDreamyAlt * 17 + +e.isDreamyBoss * 18 + +e.isDreamyBossAlt * 19 + +e.isWorld1Boss * 20 + +e.isWorld2Boss * 21 + +e.isWorld3Boss * 22 + +e.isWorld4Boss * 23 + +e.isSkaterBoss * 24 + +e.isKungFuBoss * 25 + +e.isInfiniteBoss * 26 + +e.isSnowBoss * 27,
                               ]
                           : e.width === $.miniBlockWidth
                             ? [e.x, e.y, 1]
