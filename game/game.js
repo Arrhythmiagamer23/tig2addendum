@@ -58618,8 +58618,10 @@ var version = "v1.21.0";
                             ],
                           ),
                         ],
-                      )]),
-                  ];
+                      )
+                    ]
+                  ),
+                ];
               }
               return [
                 conditional(
@@ -59118,8 +59120,8 @@ var version = "v1.21.0";
                 ifConditional(
                   () =>
                     !a(Se).settings.hidePlayerTrail,
-                    a(Se).settings.flyingTrail,
-                    a(Se).settings.classicTrail,
+                    !a(Se).settings.flyingTrail,
+                    !a(Se).settings.classicTrail,
                   () => [
                     f({
                       props: () => ({
